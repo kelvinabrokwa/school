@@ -278,7 +278,7 @@ $$
   \item [(b)] Show that the
   second column of $A$ is a linear combination of the columns of $A$.
 \end{itemize}
-Solution: \linebreak
+Solution: \\
 \begin{itemize}
 \item[(a)]
 \end{itemize}
@@ -481,7 +481,7 @@ $$
 \left[\matrix{7&3\cr 2&1\cr 5&3}\right]
 \left[\matrix{x_{1}\cr x_{2}}\right] = \left[\matrix{5\cr1\cr1}\right].
 $$
-Solution: \linebreak
+Solution: \\
 We can quickly manipulate the information given above like so:
 $$2u - 3v -w = 0$$
 $$2u - 3v = w$$
@@ -500,8 +500,8 @@ $$
 x_1 = 5x_4, x_2 = 3-2x_4, x_3 = 2+5x_4, \qquad x_4 \in \IR.
 $$ 
 Describe the solution set as 
-a line in $\IR^4$ in the format of $\{\bp + t \bv: t \in \IR\}$. \linebreak
-Solution: \linebreak
+a line in $\IR^4$ in the format of $\{\bp + t \bv: t \in \IR\}$. \\
+Solution: \\
 Since $x_4$ is a free variable we can set it equal to a variable $t$, $x_4 = t$. We can thens substitute to the get the following vector:
 $$
 \left[
@@ -547,9 +547,8 @@ $$
 
 \medskip
 \noindent {\bf 10} (5 points) Describe geometrically (a line, a plane, etc.) 
-the solution set of $x_1-2x_2 + 3x_3 = 0$, and the solution set of $x_1-2x_2 + 3x_3 = 4$, as subsets in $\IR^3$. 
-\linebreak
-Solution: \linebreak
+the solution set of $x_1-2x_2 + 3x_3 = 0$, and the solution set of $x_1-2x_2 + 3x_3 = 4$, as subsets in $\IR^3$. \\
+Solution: \\
 For the first equation, we have the matrix $\left[\matrix{1 & -2 & 3 & 0}\right]$. When we row reduce we find that we have 2 free variables, $x_3 = t$ and $x_2 = s$. We solve for $x_1$ to get the following solution set:
 $$x_1 = 2s - 3t$$
 $$x_2 = s$$
@@ -617,12 +616,30 @@ $$
 \bigskip\noindent
 {\bf 11} (5 points)
 {\bf Extra credits} Show that the reduced row echelon form of an
-augmented matrix is unique. 
-
-[Hint: Suppose $A_1, A_2$ are two different reduced row echelon forms
-of an augmented matrix $A$. Consider the first row from the bottom that
-the two matrices $A_1, A_2$ are different. Argue that they will yield 
-different solutions....]
+augmented matrix is unique.  \\
+Solution: \\
+Assume $A_1$, $A_2$ are different reduced row echelon forms of an augmented matrix $A$. Say:
+$$
+A_1 = 
+\left[
+	\matrix{
+		a_{11} & * & * & c_1 \cr
+		0 & a{22} & * & c_2 \cr
+		0 & 0 & a_{33} & c_3
+	}
+\right]
+$$
+$$
+A_2 = 
+\left[
+	\matrix{
+		b_{11} & * & * & c_1 \cr
+		0 & b_{22} & * & c_2 \cr
+		0 & 0 & b_{33} & c_3
+	}
+\right]
+$$
+If these matrices are indeed different, then $a_{33} \neq b_{33}$. So, in $A_1$, $x_3 = \frac{c_3}{a_{33}}$ and in $A_2$, $x_3 = \frac{c_3}{b_{33}}$. Since $\frac{c_3}{a_{33}} \neq \frac{c_3}{b_{33}}$ when $a_{33} \neq b_{33}$, the solutions are different, so we have shown by contrapositive that $A_1$ and $A_2$ must be different.
 
 
 

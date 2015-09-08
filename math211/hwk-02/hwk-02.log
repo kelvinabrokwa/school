@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 SEP 2015 01:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 SEP 2015 01:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -71,11 +71,6 @@ Overfull \hbox (23.46231pt too wide) detected at line 169
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 281--282
-\OT1/cmr/m/n/10.95 Solution:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
@@ -92,38 +87,6 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 441.
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 442.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--486
-\OT1/cmr/m/n/10.95 Solution:
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 501--506
-\OT1/cmr/m/n/10.95 Describe the so-lu-tion set as a line in $\U/msb/m/n/10.95 R
-[]$ \OT1/cmr/m/n/10.95 in the for-mat of $\OMS/cmsy/m/n/10.95 f\OT1/cmr/bx/n/10
-.95 p \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 t\OT1/cmr/bx/n/10.95 v \OT1/cmr/
-m/n/10.95 : \OML/cmm/m/it/10.95 t \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R\OMS/
-cmsy/m/n/10.95 g$\OT1/cmr/m/n/10.95 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 501--506
-\OT1/cmr/m/n/10.95 So-lu-tion:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 549--554
-\OT1/cmr/m/n/10.95 the so-lu-tion set of $\OML/cmm/m/it/10.95 x[] \OMS/cmsy/m/n
-/10.95 ^^@ \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 3\O
-ML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 = 4$, as sub-sets in $\U/msb/m/n/10.95
- R[]$\OT1/cmr/m/n/10.95 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 549--554
-\OT1/cmr/m/n/10.95 So-lu-tion:
- []
-
 [3] [4] (./hwk-02.aux) ) 
 Here is how much of TeX's memory you used:
  386 strings out of 493089
@@ -132,7 +95,7 @@ Here is how much of TeX's memory you used:
  3919 multiletter control sequences out of 15000+600000
  12141 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 22i,12n,24p,232b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 22i,12n,24p,344b,122s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
@@ -145,7 +108,7 @@ cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
 r8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on hwk-02.pdf (4 pages, 115287 bytes).
+Output written on hwk-02.pdf (4 pages, 117070 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
