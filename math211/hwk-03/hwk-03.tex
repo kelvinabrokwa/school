@@ -1,4 +1,4 @@
-\documentclass[11pt]{article} % 
+\documentclass[10pt]{article} % 
 
 \usepackage{amsfonts,amstext}
 
@@ -36,6 +36,7 @@ Determine whether the following three vectors are linearly independent.
 {\footnotesize
 $$\left[\matrix{0\cr 2\cr 3}\right], \  \left[\matrix{0\cr 0\cr -8}\right], \ 
 \left[\matrix{-1\cr 3\cr 1}\right].$$} \\
+Solution:
 $$
 \left[
 	\matrix{
@@ -59,7 +60,7 @@ $$
 	}
 \right]
 $$
-Since there are 3 pivoting columns we know that there is only one solution to the system, the trivial solution. So, the system is \textbf{linearly dependent}.
+After row reduction, we see that since there are 3 pivoting columns we know that there is only one solution to the system, the trivial solution. So, the system is \textbf{linearly independent}.
 
 
 
@@ -97,7 +98,7 @@ $$
 	}
 \right]
 $$
-We can see that the vectors are linearly independent when $h \neq -18$. Which would render the system inconsistent, thereby making the trivial case the only solution to the system.
+We can see that the vectors are linearly independent when $h \neq -18$ because you will then have 3 pivoting columns which means one solution to the system.
 
 
 
@@ -111,9 +112,9 @@ The reduced echelon form of a linearly independent matrix is:
 $$
 \left[
 	\matrix{
-		* & * & * \cr
-		0 & * & * \cr
-		0 & 0 & * \cr	
+		1 & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		0 & 0 & 1 \cr	
 	}
 \right]
 $$
@@ -316,7 +317,8 @@ and let $T: \IR^2 \rightarrow \IR^2$
 such that $T({\bf x}) = x_1{\bf v_1}+x_2{\bf v_2}$. 
 Find the matrix $A$ such that $T({\bf x}) = A{\bf x}$ for each 
 ${\bf x} \in \IR^2$. \\
-Solution:
+Solution: \\
+The question virtually defines matrix multiplication of $x$ and a matrix with rows $x_1$ and $x_2$. So our solution is:
 $$
 \left[
 	\matrix{
