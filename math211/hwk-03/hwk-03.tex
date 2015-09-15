@@ -59,7 +59,7 @@ $$
 	}
 \right]
 $$
-
+Since there are 3 pivoting columns we know that there is only one solution to the system, the trivial solution. So, the system is \textbf{linearly dependent}.
 
 
 
@@ -105,7 +105,19 @@ We can see that the vectors are linearly independent when $h \neq -18$. Which wo
 \medskip
 \noindent{\bf 3.} Determine (with explanation) the reduced echelon form of a 
 $3 \times 3$ matrix $A$ if it has linearly independent 
-columns. 
+columns. \\
+Solution: \\
+The reduced echelon form of a linearly independent matrix is:
+$$
+\left[
+	\matrix{
+		* & * & * \cr
+		0 & * & * \cr
+		0 & 0 & * \cr	
+	}
+\right]
+$$
+We see that in this case, we hae 3 pivoting columns which means there is only one solution when we equate it to the $0$ matrix, the trivial solution. Hence, the matrix is linearly independent.
 
 
 
@@ -255,11 +267,34 @@ $$
 \left[
 	\matrix{
 		3 & 2 & 10 & -6 & 0 \cr
-		0 & 1 & 2 & 3 \cr
+		0 & 1 & 2 & 3 & 0 \cr
 		0 & 0 & 0 & 0 & 0 \cr
 		0 & 0 & 0 & 0 & 0
 	}
 \right]
+$$
+We find that we have to free variables:
+$$
+x_4 = t, 
+x_3 = s, 
+x_2 = -3t - 2s,
+x_1 = -6s
+$$
+And so vectors that are mapped into the zero vector are of the form:
+$$
+\left\{
+s\left[
+	\matrix{
+		-6 \cr -2 \cr 1 \cr 0	
+	}
+\right] +
+t\left[
+	\matrix{
+		0 \cr -3 \cr 0 \cr 1	
+	}
+\right]:
+s,t \in \IR
+\right\}
 $$
 
 
