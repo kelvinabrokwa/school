@@ -184,21 +184,10 @@ $$
 
 
 \medskip 
-\noindent{\bf 4.} Let $A$ be a $3\times 3$ matrix.
-Determine all possible reduced row echelon form of the augmented 
-
-matrix $[A \ I_3]$ 
-and decide whether $A$ is invertible in each of the following cases.
-
-(a) The matrix $A$ has 1 pivoting column.
-
-(b) The matrix $A$ has 2 pivoting columns.
-
-(c) The matrix $A$ has 3 pivoting columns.
-
+\noindent{\bf 4.}
 For the Augmented matrix $\left[\matrix{ A & I_3 }\right]$ we can say use the the variables $S$ and $T$ for each section such that $\left[\matrix{ A & I_3 }\right] = \left[\matrix{ S & T }\right]$.
 
-(a)
+(a) The matrix is not invertible
 $$
 S = \left\{
 \left[
@@ -210,21 +199,116 @@ S = \left\{
 \right],
 \left[
 	\matrix{
-		1 & * & * \cr
+		0 & 1 & * \cr
 		0 & 0 & 0 \cr
 		0 & 0 & 0	
 	}
 \right],
 \left[
 	\matrix{
-		1 & * & * \cr
+		0 & 0 & 1 \cr
 		0 & 0 & 0 \cr
 		0 & 0 & 0	
+	}
+\right]
+\right\},
+T =
+\left\{
+\left[
+	\matrix{
+		0 & 0 & * \cr
+		1 & 0 & * \cr
+		0 & 1 & *	
+	}
+\right],
+\left[
+	\matrix{
+		0 & * & 0 \cr
+		1 & * & 0 \cr
+		0 & 0 & 1	
+	}
+\right],
+\left[
+	\matrix{
+		* & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		0 & 0 & 1	
 	}
 \right]
 \right\}
 $$
 
+(b) The matrix is not invertible
+$$
+S =
+\left\{
+\left[
+	\matrix{
+		1 & * & * \cr
+		0 & 1 & * \cr
+		0 & 0 & 0
+	}
+\right],
+\left[
+	\matrix{
+		0 & 1 & * \cr
+		0 & 0 & 1 \cr
+		0 & 0 & 0
+	}
+\right],
+\left[
+	\matrix{
+		1 & * & * \cr
+		0 & 0 & 1 \cr
+		0 & 0 & 0
+	}
+\right]
+\right\},
+T =
+\left\{
+\left[
+	\matrix{
+		1 & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		* & * & 1
+	}
+\right],
+\left[
+	\matrix{
+		1 & 0 & 0 \cr
+		* & 1 & * \cr
+		0 & 0 & 1
+	}
+\right],
+\left[
+	\matrix{
+		1 & * & * \cr
+		0 & 1 & 0 \cr
+		0 & 0 & 1
+	}
+\right]
+\right\}
+$$
+
+(c) The matrix is invertible
+$$
+S =
+\left[
+	\matrix{
+		1 & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		0 & 0 & 1 	
+	}
+\right],
+T =
+\left[
+	\matrix{
+		* & * & * \cr
+		* & * & * \cr
+		* & * & *	
+	}
+\right]
+$$
 
 
 

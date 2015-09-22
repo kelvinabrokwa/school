@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 SEP 2015 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 SEP 2015 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -70,7 +70,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Here is how much of TeX's memory you used:
  367 strings out of 493089
  4412 string characters out of 6134842
- 68390 words of memory out of 5000000
+ 74390 words of memory out of 5000000
  3904 multiletter control sequences out of 15000+600000
  9515 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -85,7 +85,7 @@ mr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 >
-Output written on hwk-04.pdf (3 pages, 100169 bytes).
+Output written on hwk-04.pdf (3 pages, 99836 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
