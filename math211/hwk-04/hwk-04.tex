@@ -1,0 +1,417 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\qed}{{\hfill {\rm QED}}}
+
+\begin{document} \openup .5 \jot
+%\maketitle
+
+\noindent
+{\Large Math 211 \quad  Homework 4 \hfill Name: \hskip 1.5in \ ~}
+
+\medskip
+\centerline{Five points for each question unless specified otherwise.}
+
+\medskip
+\noindent{\bf 1.}
+$$
+AB = 
+\left[\matrix{4 & -3\cr -3 & 5\cr 0 & 1}\right]
+\left[\matrix{1&4\cr 3&-2}\right] = 
+\left[
+	\matrix{
+		-5 & 22 \cr
+		12 & -22 \cr
+		3 & -2	
+	}
+\right]
+$$
+
+
+
+
+
+\medskip
+\noindent{\bf 2.}
+$$
+A =
+\left[
+	\matrix{
+		1 & 0 & 0 \cr
+		0 & 0 & 0 \cr
+		0 & 0 & 0
+	}
+\right],
+B =
+\left[
+	\matrix{
+		0 & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		0 & 0 & 0
+	}
+\right],
+C =
+\left[
+	\matrix{
+		0 & 0 & 0 \cr
+		0 & 0 & 0 \cr
+		0 & 0 & 1
+	}
+\right]
+$$
+
+
+
+
+
+
+
+\medskip
+\noindent{\bf 3.}
+(a)
+$$
+A =
+\left[
+	\matrix{
+		7 & 3 \cr
+		-6 & -3	
+	}
+\right],
+B = 
+\left[
+	\matrix{
+	-9 \cr 4	
+	}
+\right]
+$$
+
+(b)
+$$
+\left[
+	\matrix{
+		7 & 3 & 1 & 0 \cr
+		-6 & -3 & 0 & 1	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 1 & 1 \cr
+		-6 & -3 & 0 & 1	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 1 & 1 \cr
+		0 & -3 & 6 & 7	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 1 & 1 \cr
+		0 & 1 & -2 & -\frac{7}{3}
+	}
+\right]
+$$
+
+$$
+A^{-1} =
+\left[
+	\matrix{
+		1 & 1 \cr
+		-2 & -\frac{7}{3}	
+	}
+\right]
+$$
+
+(c)
+$$
+A^{-1}b =
+\left[
+	\matrix{
+		1 & 1 \cr
+		-2 & -\frac{7}{3}	
+	}
+\right]
+\left[
+	\matrix{
+	-9 \cr 4	
+	}
+\right] = 
+\left[
+	\matrix{
+		-5 \cr \frac{26}{3}	
+	}
+\right]
+$$
+
+$$
+Ax_0 =
+\left[
+	\matrix{
+		7 & 3 \cr
+		-6 & -3	
+	}
+\right]
+\left[
+	\matrix{
+		-5 \cr \frac{26}{3}	
+	}
+\right] =
+\left[
+	\matrix{
+		-9 \cr 4	
+	}
+\right] =
+b
+$$
+
+
+
+
+
+
+
+\medskip 
+\noindent{\bf 4.} Let $A$ be a $3\times 3$ matrix.
+Determine all possible reduced row echelon form of the augmented 
+
+matrix $[A \ I_3]$ 
+and decide whether $A$ is invertible in each of the following cases.
+
+(a) The matrix $A$ has 1 pivoting column.
+
+(b) The matrix $A$ has 2 pivoting columns.
+
+(c) The matrix $A$ has 3 pivoting columns.
+
+
+
+
+
+
+\medskip\noindent
+{\bf 5.} Using regular matrix algebra we see:
+
+$$AB = AC$$
+$$AB - AC = 0$$
+$$A(B - C) = 0$$
+$$A^{-1}A(B - C) = A^{-1}0$$
+$$B - C = 0$$
+$$B = C$$
+
+
+
+
+\medskip
+\noindent{\bf 6.}
+Let 
+$A = \left[\matrix{1 & -2 & 1 \cr 4 & -7 & 3 \cr -2 & 6 & -3\cr}\right]$.
+Apply row reduction to the matrix  $\left[\matrix{A & I_3}\right]$ 
+until we have the 
+
+reduced row echelon form $\left[\matrix{I_3& B }\right]$,
+and verify that $AB = I_3$.
+
+$$
+\left[
+	\matrix{
+		1 & -2 & 1 & 1 & 0 & 0 \cr
+		4 & -7 & 3 & 0 & 1 & 0 \cr
+		-2 & 6 & -3 & 0 & 0 & 1 	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & -2 & 1 & 1 & 0 & 0 \cr
+		0 & 1 & -1 & -4 & 1 & 0 \cr	
+		0 & 2 & -1 & 2 & 0 & 1
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 0 & 3 & 0 & 1 \cr
+		0 & -1 & 0 & -6 & 1 & -1 \cr
+		0& 2 & -1 & 2 & 0 & 1	
+	}
+\right] \rightarrow
+$$
+$$
+\left[
+	\matrix{
+		1 & 0 & 0 & 3 & 0 & 1 \cr
+		0 & 1 & 0 & 6 & -1 & 1 \cr
+		0 & 0 & 1 & 10 & -2 & 1	
+	}
+\right]
+$$
+
+$$
+\left[
+	\matrix{
+		1 & -2 & 1 \cr
+		4 & -7 & 3 \cr
+		-2 & 6 & -3	
+	}
+\right]
+\left[
+	\matrix{
+		3 & 0 & 1 \cr
+		6 & -1 & 1 \cr
+		10 & -2 & 1	
+	}
+\right] =
+\left[
+	\matrix{
+		1== & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		0 & 0 & 1	
+	}
+\right]
+$$
+
+
+
+
+
+
+
+\medskip
+\noindent{\bf 7.}
+Let $A = \left[\matrix{1 & 1 & 1 & 0 \cr 0 & 1 & 1 & 1\cr}\right]$.
+
+
+(a) Find a $4\times 2$ matrix $B$ such that $AB = I_2$.
+
+\qquad [Hint: Solve 
+${\bf b_1}, {\bf b_2} \in \IR^4$ such that $A{\bf b}_1 = {\bf e}_1 \in \IR^2$ and
+$A{\bf b}_2 = {\bf e}_2 \in \IR^2$.
+\smallskip
+
+(b) Explain why there is no $4\times 2$ matrix $C$ such that $CA = I_4$.
+
+(a) We can augment the matrix with both $e_{1}$ and $e_{2} \in \IR^2$ to find the columns of the matrix $B$.
+$$
+\left[
+	\matrix{
+		1 & 1 & 1 & 0 & 1 \cr
+		0 & 1 & 1 & 1 & 0	
+	}
+\right]
+$$
+and
+$$
+\left[
+	\matrix{
+		1 & 1 & 1 & 0 & 0 \cr
+		0 & 1 & 1 & 1 & 1	
+	}
+\right]
+$$
+In both cases we have two free variables, $x_3$ and $x_4$, which we can set equal to $s$ and $t$, respectively. If we set $s = 0$ and $t = 1$, then we have $b_1 = \left[\matrix{ 1 \cr 0 \cr 0 \cr 0 }\right]$ and $b_2 = \left[\matrix{ 0 \cr 0 \cr 0 \cr 1 }\right]$. and so $B = \left[\matrix{ 1 & 0 \cr 0 & 0 \cr 0 & 0 \cr 0 & 1 }\right]$. Indeed
+$$
+\left[
+	\matrix{
+		1 & 1 & 1 & 0 \cr
+		0 & 1 & 1 & 1	
+	}
+\right]
+\left[
+	\matrix{
+		1 & 0 \cr
+		0 & 0 \cr
+		0 & 0 \cr 
+		0 & 1 }
+\right] = 
+\left[
+	\matrix{
+		1 & 0 \cr
+		0 & 1
+	}
+\right]
+$$
+
+(b) There is no $4 x 2$ matrix $C$ such that $CA = I_4$ because 
+
+
+
+
+
+\medskip
+\noindent{\bf 8.}
+Suppose $A$ is an $n\times n$ matrix such that 
+the columns of $A^2$ spans $\mathbb{R}^n$. 
+
+Show that $A$ has linearly independent columns.
+
+
+
+
+\medskip
+\noindent{\bf 9.} (10 points)
+
+(a)
+$$
+A =
+\left[
+	\matrix{
+		2 & -8 \cr
+		-2 & 7	
+	}
+\right]
+$$
+$$
+A^{-1} =
+det A \left[
+	\matrix{
+		7 &	8 \cr
+		2 & 2
+	}
+\right] = 
+\left[
+	\matrix{
+		-\frac{7}{2}	& -4 \cr
+		-1 & -1
+	}
+\right]
+$$
+
+(b)
+$$R(x_1, x_2) = (-\frac{7}{2}x_1 - x_2, -4x_1 - x_2)$$
+
+(c)
+$$R \circ T(x_1, x_2)$$
+$$= R(2x_1 - 8x_2, -2x_1 + 7x_2) $$
+$$
+=
+(
+	-\frac{7}{2}(2x_1 - 8x_2) - (-2x_1 + 7x_2),
+	-4(2x_1 - 8x_2) - (-2x_1 + 7x_2)
+)
+$$
+$$= (x_1, x_2)$$
+
+(d)
+$$T \circ R(x_1, x_2)$$
+$$= T(-\frac{7}{2}x_1 - x_2, -4x_1 - x_2)$$
+$$
+=
+(
+	2(-\frac{7}{2}x_1 - x_2) - 8(-4x_1 - x_2),
+	-2(-\frac{7}{2}x_1 - x_2) + 7(-4x_1 - x_2)
+)
+$$
+$$= (x_1, x_2)$$
+\end{document}
+
