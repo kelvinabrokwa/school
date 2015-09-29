@@ -1,0 +1,359 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+\usepackage{amsthm}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+
+
+\begin{document} 
+%\maketitle
+
+\noindent
+{\Large Math 211 \hfill Homework 5 \hfill Kelvin Abrokwa-Johnson}
+
+
+
+
+
+
+\medskip\noindent
+{\bf 1.}
+(a) If $A$ and $B$ are invertible, then we can pre-multiply both sides by $A^{-1}$ to get $A^{-1}ABC = A^{-1}I$ thus, $ BC = A^{-1}$. We continue by pre-multiplying both sides by $B^{-1}$ to get $B^{-1}BC = B^{-1}A^{-1}$, thus, $C = B^{-1}A^{-1}$. Now we can undo those operation in a slightly different order. We can post-multiply both sides by $A$ to get $CA = B^{-1}A^{-1} = BI$. And now we pre-multiply both sides by $B$ to get $BCA = BB^{-1} = I$. So, we have shown that $BCA = I$. In general, matrix multiplication of this sort is only commutativein a cyclical manner.
+
+(b)
+$$
+A = \left[
+	\matrix{
+		0 & 1 \cr
+		1 & 0 \cr	
+	}
+\right],
+B = \left[
+	\matrix{
+		-1 & 0 \cr
+		0 & 1	
+	}
+\right],
+C = \left[
+	\matrix{
+		0 & -1 \cr
+		1 & 0	
+	}
+\right]
+$$
+
+
+
+
+
+
+
+\medskip
+\noindent{\bf 2.}
+Computing the product of two partitioned matrices, we have
+$$
+\left[
+	\matrix{
+		I & 0 \cr
+		-E & I
+	}
+\right]
+\left[
+	\matrix{
+		W & X \cr
+		Y & Z
+	}
+\right] = 
+\left[
+	\matrix{
+		W & X \cr
+		-EW+Y & -EX+Z
+	}
+\right]
+$$
+
+
+
+
+
+
+
+
+
+
+\medskip
+\noindent{\bf 3.}
+When we multiple the first row by the first column we find that $AX = I$ and so we can multiply the left side of both sides by $A^{-1}$ to get $X = A^{-1}$. Using the first row and second column we see that $AY + B0 = 0$ which is simply $AY = 0$. Since we know from the first calculation that $A \neq 0$, $Y$ must be $0$. Finally, using the first row and third column we find that $AZ + BI = 0$. If we subtract $B$ from both sides and then multiply on the left by $A^{-1}$ we get $Z = -A^{-1}B$.
+
+So we have:
+$$X = A^{-1}$$
+$$Y = 0$$
+$$Z = -A^{-1}B$$
+
+
+
+
+
+
+
+\medskip\noindent
+{\bf 4.}
+$$
+M^2 = 
+\left[
+	\matrix{
+		A & O_n \cr
+		I_n & -A\cr
+	}
+\right]
+\left[
+	\matrix{
+		A & O_n \cr
+		I_n & -A\cr
+	}
+\right] =
+\left[
+	\matrix{
+		A^2 & O_n \cr
+		0_n & A^2 \cr
+	}
+\right]
+$$
+We are given $A^2 = I_{n}$, so we substistute to get:
+$$
+\left[
+	\matrix{
+		I_n & O_n \cr
+		0_n & I_n \cr
+	}
+\right] = I_{2n}
+$$
+
+
+
+
+
+
+
+
+\medskip\noindent
+{\bf 5.}
+
+(a) In order to show that $A^{-1} = \left[\matrix{A_{11}^{-1} & O & O \cr O & A_{22}^{-1} & O \cr O & O & A_{33}^{-1} \cr}\right]$ it is sufficient to show that $AA^{-1}  = I_3$. So we have the following matrix multiplication:
+$$
+\left[
+	\matrix{
+		A_{11} & O & O \cr
+		O & A_{22} & O \cr
+		O & O & A_{33} \cr
+	}
+\right]
+\left[
+	\matrix{
+		A_{11}^{-1} & O & O \cr
+		O & A_{22}^{-1} & O \cr
+		O & O & A_{33}^{-1} \cr
+	}
+\right] =
+\left[
+	\matrix{
+		A_{11}A_{11}^{-1} & O & O \cr
+		O & A_{22}A_{22}^{-1} & O \cr
+		O & O & A_{33}A_{33}^{-1} \cr
+	}
+\right] =
+\left[
+	\matrix{
+		I & O & O \cr
+		O & I & O \cr
+		O & O & I \cr
+	}
+\right]
+$$
+
+(b) To find $A^{-1}$ we can simply invert each block:
+$$
+A_{11}^{-1} = \left[
+	\matrix{
+		-5 & 2 \cr
+		3 & -1 \cr
+	}
+\right],
+A_{22}^{-1} = \left[
+	\matrix{
+		3 & -4 \cr
+		-\frac{5}{2} & \frac{7}{2}	
+	}
+\right],
+A_{33}^{-1} = \left[\frac{1}{2}\right]
+$$
+So,
+$$
+A^{-1} = \left[
+	\matrix{
+		-5 & 2	& 0 & 0 & 0 \cr
+		3 & -1 & 0 & 0 & 0 \cr
+		0 & 0 & 3 & -4 & 0 \cr
+		0 & 0 & -\frac{5}{2} & \frac{7}{2} \cr
+		0 & 0 & 0 & 0 & \frac{1}{2}
+	}
+\right]
+$$
+
+
+
+
+
+
+\medskip
+\noindent{\bf 6.}
+We have the following $LU$ factorization of the matrix
+$$A = 
+\left[\matrix{2 & -6 & 4 \cr -4 & 8 & 0 \cr 0 & -4 &6\cr}\right]
+=\left[\matrix{1 & 0& 0 \cr -2& 1 & 0 \cr 0 & 1 & 1\cr}\right]
+\left[\matrix{2 & -6 & 4 \cr0&  -4 & 8 \cr 0 & 0 & -2\cr}\right].$$
+Solve the equation $A{\bf x} = {\bf b} = \left[\matrix{2 \cr -4 \cr 6\cr}\right] $ by
+first solving (a) $L{\bf y} = {\bf b}$, and then solving (b) $U{\bf x} = {\bf y}$. 
+
+(a)
+$$
+\left[
+	\matrix{
+		1 & 0 & 0 & 2 \cr
+		-2 & 1 & 0 & -4 \cr
+		0 & 1 & 1 & 6	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 0 & 2 \cr
+		-2 & 1 & 0 & -4 \cr
+		2 & 0 & 1 & 10
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 0 & 2 \cr
+		0 & 1 & 0 & 0 \cr
+		0 & 0 & 1 & 6
+	}
+\right]
+$$
+$$
+y = \left[\matrix{ 2 \cr 0 \cr 6 }\right]
+$$
+(b)
+$$
+\left[
+	\matrix{
+		2 & -6 & 4 & 2 \cr
+		0 & -4 & 8 & 0 \cr
+		0 & 0 & -2 & 6	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & -3 & 2 & 1 \cr
+		0 & 1 & -2 & 0 \cr
+		0 & 0 & 1 & -3	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & -3 & 0 & 6 \cr
+		0 & 1 & 0 & -6 \cr
+		0 & 0 & 1 & -3	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 0 & -11 \cr
+		0 & 1 & 0 & -6 \cr
+		0 & 0 & 1 & -3	
+	}
+\right]
+$$
+$$
+x = \left[\matrix{ -11 \cr -6 \cr -3 }\right]
+$$
+
+
+
+
+
+
+\medskip
+\noindent{\bf 7.}
+Find the LU factorization of 
+$$A = \left[\matrix{-5&0&4\cr 10&2&-5\cr 10&10&16}\right],$$
+
+by applying elementary operations to yield $[A | I_n]$ to $[U | L^{-1}]$.
+$$
+\left[
+	\matrix{
+		-5 & 0 & 4 \cr
+		10 & 2 & -5 \cr
+		10 & 10 & 16	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		-5 & 0 & 4 \cr
+		0 & 2 & 3 \cr
+		0 & 10 & 24	
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		-5 & 0 & 4 \cr
+		0 & 2 & 3 \cr
+		0 & 0 & 9	
+	}
+\right]
+$$
+$$
+U =
+\left[
+	\matrix{
+		-5 & 0 & 4 \cr
+		0 & 2 & 3 \cr
+		0 & 0 & 9	
+	}
+\right]
+$$
+We apply the appropriate  column divions for $L$ to get:
+$$
+L = \left[
+	\matrix{
+	1 & 0 & 0 \cr
+	-2 & 1 & 0 \cr
+	-2 & 5 & 1	
+	}
+\right]
+$$
+
+
+
+
+
+
+\medskip
+\noindent
+{\bf 8.} 
+If $B$ is invertible, then we can find elementary matrices $E_{1}, ..., E_{k}$ such that $E_{k}...E_{1}B = I$. If we apply these elementary matrices to the augmented matrix $\left[\matrix{B & I}\right]$, which would yield  $E_{k}...E_{1}\left[\matrix{B & I}\right] = \left[\matrix{I & B^{-1}}\right]$. Likewise, we can apply that same series of elementary matrix manipulations to the augmented matrix $\left[\matrix{B & A}\right]$ yielding $\left[\matrix{I & E_{k}...E_{1}A}\right]$. We are given that B is invertible and that $A = BC$, so we know $B^{-1}A = IC$ and since $E_{k}...E_{1}A = B^{-1}A$ we have shown that the reduced row echelon form of  $[B \ A]$ is $[I \ C]$.
+
+
+
+\end{document}
+
