@@ -118,12 +118,7 @@ $det(M) = 7$ because it takes at least 2 row swaps to reach $M$ from the origina
 Since $N$ is obtained by adding a multiple of one row to another the determinant is the same as the original matrix. $det(N) = 7$.
 
 
-\medskip\noindent{\bf 7.} Let $A$ be an $n\times n$ matrix.
-
-(a) Show that $\det(rA) = r^n \det(A)$.
-
-(b) Show that $\det(A^{-1}) = 1/\det(A)$ if $\det(A) \ne 0$.
-
+\medskip\noindent{\bf 7.}
 (a) We know that an invertible matrix can be reduced to the form $\left[
 	\matrix{
     	a_{11} & * & * & * \cr
@@ -140,6 +135,8 @@ Since $N$ is obtained by adding a multiple of one row to another the determinant
     }
 \right]$. The determinant of this matrix is $ra_{11} \times ra_{22} \times \cdots \times ra_{nn} = r^n(a_{11} \times a_{22} \times \cdots \times a_{nn}) = r^ndet(A).$
 
+(b) $det(A) \neq 0$ means that $A$ is invertible, therefore, there exists a set of matrices $E_1 \cdot\cdot\cdot E_k$ such that $E_k \cdot\cdot\cdot E_1 A = I_n$. We know that $1 = det(I_n) = det(E_k) \cdot \cdot \cdot det(E_1) det(A)$. So $\frac{1}{det(A)} = det(E_k) \cdot \cdot \cdot det(E_1) = det(A^{-1})$. QED.
+
 \medskip
 \noindent{\bf 8.}
 Suppose $A$ and $P$ are $n \times n$ matrices such that 
@@ -148,12 +145,16 @@ $P$ is invertible. Show that $\det(PAP^{-1})=\det(A)$.
 
 \medskip
 \noindent{\bf 9.} (10 points)
-Suppose $A$ and $B$ are $4 \times 4$
-matrices, with $\det(A)=-1$ and $\det(B)=2$. 
 
-Determine (a) $\det(AB)$, \ (b) $\det(B^5)$ \ (c) $\det(2A)$, \ (d) $\det(A^TA)$, \ (e) $\det(AB^{-1})$.
+(a) $det(AB) = det(A)det(B) = -2$
 
+(b) $det(B^5) = det(B)^5 = -32$
 
+(c) $det(2A) = 2^4det(A) = -16$
+
+(d) $det(A^TA) = det(A)^2 = 1$
+
+(e) $det(AB^{-1}) = \frac{det(A)}{det(B)} = -\frac{1}{2}$
 
 
 
