@@ -119,21 +119,7 @@ Since $N$ is obtained by adding a multiple of one row to another the determinant
 
 
 \medskip\noindent{\bf 7.}
-(a) We know that an invertible matrix can be reduced to the form $\left[
-	\matrix{
-    	a_{11} & * & * & * \cr
-        0 & a_{22} & * & * \cr
-       	0 & 0 & \ddots & * \cr
-        0 & 0 & 0 & a_{nn}
-    }
-\right]$ and that $det(A)$ is the product of the diagonals $a_{11} \times a_{22} \times \cdots \times a_{nn}$. So, if we multiply the matrix by some scalar $r$ then it becomes $\left[
-	\matrix{
-    	ra_{11} & * & * & * \cr
-        0 & ra_{22} & * & * \cr
-       	0 & 0 & \ddots & * \cr
-        0 & 0 & 0 & ra_{nn}
-    }
-\right]$. The determinant of this matrix is $ra_{11} \times ra_{22} \times \cdots \times ra_{nn} = r^n(a_{11} \times a_{22} \times \cdots \times a_{nn}) = r^ndet(A).$
+(a) We know that $A = IA$ so $det(A) = det(IA)$. Therefore it follows that $det(rA) = det(rI)det(A)$. The determinant of $rI$ can be determined by the product of the diagonal which in this case would simply be $r^n$. So $det(rA) = r^ndet(A)$.
 
 (b) $det(A) \neq 0$ means that $A$ is invertible, therefore, there exists a set of matrices $E_1 \cdot\cdot\cdot E_k$ such that $E_k \cdot\cdot\cdot E_1 A = I_n$. We know that $1 = det(I_n) = det(E_k) \cdot \cdot \cdot det(E_1) det(A)$. So $\frac{1}{det(A)} = det(E_k) \cdot \cdot \cdot det(E_1) = det(A^{-1})$. QED.
 

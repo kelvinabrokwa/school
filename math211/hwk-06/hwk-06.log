@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 OCT 2015 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 OCT 2015 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -50,8 +50,7 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@postskip=\skip44
 \thm@headsep=\skip45
 \dth@everypar=\toks21
-)
-No file hwk-06.aux.
+) (./hwk-06.aux)
 \openout1 = `hwk-06.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -79,13 +78,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./
 hwk-06.aux) ) 
 Here is how much of TeX's memory you used:
- 446 strings out of 493089
- 5373 string characters out of 6134842
- 67048 words of memory out of 5000000
+ 448 strings out of 493089
+ 5395 string characters out of 6134842
+ 65048 words of memory out of 5000000
  3983 multiletter control sequences out of 15000+600000
  8894 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 21i,11n,24p,355b,111s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 21i,10n,24p,355b,111s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -95,7 +94,7 @@ mi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on hwk-06.pdf (2 pages, 97104 bytes).
+Output written on hwk-06.pdf (2 pages, 96123 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream
