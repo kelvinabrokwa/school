@@ -1,0 +1,191 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+\usepackage{amsthm}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+
+
+\begin{document} 
+%\maketitle
+
+\noindent
+{\Large Math 211 \quad Homework 8
+\hfill Kelvin Abrokwa-Johnson}
+
+\medskip
+\noindent{\bf 1.}
+Find an explicit description of Nul$A$ where 
+$$A=\left[\matrix{1&-3&2&0\cr 0&0&3&0}\right].$$
+
+[Find vectors such that Nul$A$ is the set of linear combinations of the vectors.]
+
+$$
+Nul A = t \left[
+	\matrix{ 0 \cr 0 \cr 0 \cr 1 }
+\right] + s \left[
+	\matrix{ 3 \cr 1 \cr 0 \cr 0 }
+\right]
+$$
+
+\medskip
+\noindent{\bf 2.}
+Let
+$$A=\left[\matrix{10&-8&-2&-2\cr 0&2&2&-2\cr 1&-1&6&0\cr 1&1&0&-2}\right],
+\quad {\bf w}=\left[\matrix{2\cr 2\cr 0\cr 2}\right].$$
+\begin{enumerate}
+  \item Determine whether ${\bf w}$ is in Col$A$. 
+
+ 
+  \item Determine whether ${\bf w}$ is in Nul$A$. 
+
+\end{enumerate}
+
+\begin{enumerate}
+	\item Yes, $Ax  = w$, for $x = \left[ \matrix{ 0 \cr 0 \cr 0 \cr -1 } \right]$.
+	
+	\item Yes, $Aw = \left[\matrix{10&-8&-2&-2\cr 0&2&2&-2\cr 1&-1&6&0\cr 1&1&0&-2}\right] \left[\matrix{2\cr 2\cr 0\cr 2}\right] = \left[ \matrix{ 0 \cr 0 \cr 0 \cr 0 } \right]$.
+\end{enumerate}
+
+\medskip
+\noindent{\bf 3.}
+Let  $T:\mathbb{P}_2(t)\rightarrow \mathbb{R}^2$ be a linear transformation
+defined as $T({\bf p})=\left[\matrix{{\bf p}(0)\cr {\bf p}(0)}\right]$. 
+Find two polynomials 
+
+in $\mathbb{P}_2(t)$ that span the
+kernel of $T$, and describe the range of $T$. 
+
+\medskip
+[Hint: Determine the matrix $A$ of transformation of $T$. Find the kernel and 
+range space using 
+
+Nul$A$ and Col$A$.]
+
+\medskip
+\noindent{\bf 4.} 
+Let $A = \left[ \matrix{-2 & 4 & -2 & -4\cr 
+ 2 & -6 & -3 & 1 \cr
+ -3& 8 & 2 & -3\cr} \right]$. 
+Fine bases for Nul$A$ and Col$A$. 
+
+$$
+A =
+\left[
+	\matrix{
+		-2 & 4 & -2 & -4\cr 
+		 2 & -6 & -3 & 1 \cr
+		-3 & 8 & 2 & -3
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		-2 & 4 & -2 & -4\cr 
+		 0 & -2 & -5 & -3 \cr
+		0 & 0 & 0 & 0
+	}
+\right]
+$$
+$$
+Nul A = \left\{
+	\left[
+		\matrix{ -11 \cr -5 \cr 1 \cr 0 }
+	\right],
+	\left[
+		\matrix{ 8 \cr -3 \cr 0 \cr 1 }
+	\right]
+\right\},
+Basis = \left\{
+	\left[
+		\matrix{ -2 \cr 2 \cr -3 }
+	\right],
+	\left[
+		\matrix{ 4 \cr -6 \cr 8 }
+	\right]
+\right\}
+$$
+
+
+\medskip
+\noindent{\bf 5.}
+Find a basis for the space spanned by the following vectors.
+$$\left[\matrix{1 \cr 0 \cr 0 \cr 1\cr}\right], \ 
+\left[\matrix{-2 \cr 0 \cr 0 \cr 2\cr}\right], \ 
+\left[\matrix{3 \cr -1 \cr 1 \cr -1\cr}\right], \ 
+\left[\matrix{5 \cr -3 \cr 3 \cr -4\cr}\right], \ 
+\left[\matrix{2 \cr -1 \cr 1 \cr 0\cr}\right].$$
+
+We remove the second colum since it is clearly a multiple of the first. And then we row reduce:
+
+$$
+\left[
+	\matrix{
+		1 & -2 & 3 & 5 & 2 \cr
+		0 & 0 & -1 & -3 & -1 \cr
+		0 & 0 & 1 & 3 & 1 \cr
+		1 & 2 & -1 & -4 & 0
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & -2 & 3 & 5 & 2 \cr
+		0 & 0 & -1 & -3 & -1 \cr
+		0 & 0 & 0 & 0 & 0 \cr
+		0 & 4 & -4 & -9 & -2
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & -2 & 3 & 5 & 2 \cr
+		0 & 0 & -1 & -3 & -1 \cr
+		0 & 0 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & -5 & -2
+	}
+\right]
+$$
+
+$$
+basis = \left\{
+	\left[
+		\matrix{ 1 \cr 0 \cr 0 \cr 1 }
+	\right],
+		\left[
+		\matrix{ 3 \cr -1 \cr 1 \cr -1 }
+	\right],
+		\left[
+		\matrix{ 5 \cr -3 \cr 3 \cr -4 }
+	\right]
+\right\}
+$$
+
+
+\medskip
+\noindent{\bf 6.}
+Let 
+$${\bf v_1} = \left[\matrix{3 \cr 4 \cr -2 \cr -5\cr}\right], \ 
+{\bf v_2} = \left[\matrix{4 \cr 3 \cr 2 \cr 4\cr}\right], \ 
+{\bf v_3} = \left[\matrix{2 \cr 5  \cr -6 \cr -14\cr}\right].$$
+
+It can be verified that $2{\bf v_1}-{\bf v_2}-{\bf v_3}
+={\bf 0}$. Find a basis for $H = {\rm Span}\{{\bf v_1}, {\bf v_2},
+{\bf v_3}\}.$
+
+$basis = { v_1, v_2 }$
+
+\medskip\noindent{\bf 7.} Find a basis for the vector space $H$ of 
+continuous functions spanned by the set 
+$$\{\cos t, \sin t, \sin 2t, \sin t\cos t\}.$$
+ 
+$basis = \{ cos t, sin t, sin 2t \}$
+
+\end{document}
