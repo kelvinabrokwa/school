@@ -25,10 +25,7 @@
 
 \medskip
 \noindent{\bf 1.}
-Find an explicit description of Nul$A$ where 
-$$A=\left[\matrix{1&-3&2&0\cr 0&0&3&0}\right].$$
-
-[Find vectors such that Nul$A$ is the set of linear combinations of the vectors.]
+We see that $x_4$ and $x_2$ are free variables. Using this we can set them to $t$ and $s$ and solve for the null space:
 
 $$
 Nul A = t \left[
@@ -40,17 +37,6 @@ $$
 
 \medskip
 \noindent{\bf 2.}
-Let
-$$A=\left[\matrix{10&-8&-2&-2\cr 0&2&2&-2\cr 1&-1&6&0\cr 1&1&0&-2}\right],
-\quad {\bf w}=\left[\matrix{2\cr 2\cr 0\cr 2}\right].$$
-\begin{enumerate}
-  \item Determine whether ${\bf w}$ is in Col$A$. 
-
- 
-  \item Determine whether ${\bf w}$ is in Nul$A$. 
-
-\end{enumerate}
-
 \begin{enumerate}
 	\item Yes, $Ax  = w$, for $x = \left[ \matrix{ 0 \cr 0 \cr 0 \cr -1 } \right]$.
 	
@@ -59,25 +45,13 @@ $$A=\left[\matrix{10&-8&-2&-2\cr 0&2&2&-2\cr 1&-1&6&0\cr 1&1&0&-2}\right],
 
 \medskip
 \noindent{\bf 3.}
-Let  $T:\mathbb{P}_2(t)\rightarrow \mathbb{R}^2$ be a linear transformation
-defined as $T({\bf p})=\left[\matrix{{\bf p}(0)\cr {\bf p}(0)}\right]$. 
-Find two polynomials 
+In order to find the set of all functions  for which $T(p) = \left[ \matrix{ p(0) \cr p(0) } \right]$ we must simply ensure that the constant term of the polynomial is $0$ (because all other terms will be multiplied by $0$). So, the kernel can be defined as $Span\{ t, t^2 \}$.
 
-in $\mathbb{P}_2(t)$ that span the
-kernel of $T$, and describe the range of $T$. 
-
-\medskip
-[Hint: Determine the matrix $A$ of transformation of $T$. Find the kernel and 
-range space using 
-
-Nul$A$ and Col$A$.]
+The range given that the generic form of the polynomial is $p(t) = c_1 + c_2t + c_3t^2$ is $\left\{ \left[\matrix{ c_1 \cr c_1 }\right] : c_1 \in R \right\}$ because after the transformation all terms except for the constant will become $0$.
 
 \medskip
 \noindent{\bf 4.} 
-Let $A = \left[ \matrix{-2 & 4 & -2 & -4\cr 
- 2 & -6 & -3 & 1 \cr
- -3& 8 & 2 & -3\cr} \right]$. 
-Fine bases for Nul$A$ and Col$A$. 
+We can find both the Nul$A$ and Col$A$ by row reducing like so:
 
 $$
 A =
@@ -118,14 +92,7 @@ $$
 
 \medskip
 \noindent{\bf 5.}
-Find a basis for the space spanned by the following vectors.
-$$\left[\matrix{1 \cr 0 \cr 0 \cr 1\cr}\right], \ 
-\left[\matrix{-2 \cr 0 \cr 0 \cr 2\cr}\right], \ 
-\left[\matrix{3 \cr -1 \cr 1 \cr -1\cr}\right], \ 
-\left[\matrix{5 \cr -3 \cr 3 \cr -4\cr}\right], \ 
-\left[\matrix{2 \cr -1 \cr 1 \cr 0\cr}\right].$$
-
-We remove the second colum since it is clearly a multiple of the first. And then we row reduce:
+We can find the basis by simply row reducing and choosing columns with leading non-zeros.
 
 $$
 \left[
@@ -171,21 +138,14 @@ $$
 
 \medskip
 \noindent{\bf 6.}
-Let 
-$${\bf v_1} = \left[\matrix{3 \cr 4 \cr -2 \cr -5\cr}\right], \ 
-{\bf v_2} = \left[\matrix{4 \cr 3 \cr 2 \cr 4\cr}\right], \ 
-{\bf v_3} = \left[\matrix{2 \cr 5  \cr -6 \cr -14\cr}\right].$$
-
-It can be verified that $2{\bf v_1}-{\bf v_2}-{\bf v_3}
-={\bf 0}$. Find a basis for $H = {\rm Span}\{{\bf v_1}, {\bf v_2},
-{\bf v_3}\}.$
-
-$basis = { v_1, v_2 }$
+Since $2v_1 - v_2 -v_3 = 0$ implied that $v_3$ can be expressed as a multiple of $v_1$ and $v_2$ because $2v_1 - v_2 = v_3$, we can eliminate it from our basis. It is clear that $v_1$ and $v_2$ are not multiples of one another so the basis $ = \{ v_1, v_2 \}$
 
 \medskip\noindent{\bf 7.} Find a basis for the vector space $H$ of 
 continuous functions spanned by the set 
 $$\{\cos t, \sin t, \sin 2t, \sin t\cos t\}.$$
  
-$basis = \{ cos t, sin t, sin 2t \}$
+It is clear that sin $\sin t$ can not be expressed as a multiple of $\cos t$, so those two are in the basis. We know, howerver, from trigonometric identities, that $\frac{1}{2}\sin 2t = \sin t \cos t$. Since $\sin t \cos t$ can be expressed as a multiple of the other functions we can disclude it from the basis.
+ 
+So the basis $ = \{ \cos t, \sin t, \sin 2t \}$
 
 \end{document}
