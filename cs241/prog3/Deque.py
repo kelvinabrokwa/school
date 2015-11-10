@@ -39,4 +39,41 @@ class Deque:
     return self._list.get_element_at(len(self._list) - 1)
 
 if __name__ == '__main__':
-  print('tests')
+  deq = Deque()
+  success = True
+  # test push front
+  d1 = 1
+  d2 = 2
+  d3 = 3
+  deq.push_front(d1)
+  deq.push_front(d2)
+  deq.push_back(d3)
+  if len(deq) != 3:
+    print('ERROR with len')
+    success = False
+  if deq.peek_front() != d2:
+    print('ERROR: push front doesn\'t work')
+    success = False
+  if deq.peek_back() != d3:
+    print('ERROR: peek back doesn\'t work')
+    success = False
+  if deq.pop_front() != d2:
+    print('ERROR: pop front does not work')
+    success = False
+  if deq.peek_front() != d1:
+    print('ERROR: pop front still does not work')
+    success = False
+  if deq.pop_back() != d3:
+    print('ERROR: pop back does not work')
+    success = False
+
+  while len(deq) != 0:
+    deq.pop_back()
+
+  try:
+    deq.pop_back()
+  except:
+    print('ERROR: popping from empty deque throws')
+    success = False
+
+  print('ALL TESTS PASSED!' if success else 'FAILURE')

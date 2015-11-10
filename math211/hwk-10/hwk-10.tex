@@ -1,0 +1,159 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+\usepackage{amsthm}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+
+
+\begin{document} 
+%\maketitle
+
+\noindent
+{\Large Math 211 \hfill Homework 10 \hfill Kelvin Abrokwa-Johnson}
+
+\medskip
+\noindent{\bf 1.} (10 points)
+Show that 
+$${\mathbb B} = \left\{1, 1-t, 2-4t+t^2, 6-18t+9t^2-t^3\right\}$$
+is a basis for $\mathbb{P}_3$, and find the change of basis matrix from 
+${\mathbb B} $ to ${\mathbb C} = \{1, t, t^2, t^3\}$ and the change of the basis 
+matrix from ${\mathbb C} $ to ${\mathbb B}$
+Find $[u]_{\mathbb B}$ for $u = 1 - 3t + 9t^2 -t^3$.
+
+We can represent the polynomial as a set of vectors:
+
+$$
+\left\{
+	\left[ \matrix{ 1 \cr 0 \cr 0 \cr 0 }\right],
+	\left[ \matrix{ 1 \cr -1 \cr 0 \cr 0 }\right],
+	\left[ \matrix{ 2 \cr -4 \cr 1 \cr 0 }\right],
+	\left[ \matrix{ 6 \cr -18 \cr 9 \cr 1 }\right]
+\right\}
+$$
+
+In this form it is clear that the set is linearly independent, therefore the set is linearly independent and is a basis for $\mathbb{P}_3$.
+
+The change of basis matrix from $\mathbb{C}$ to $\mathbb{B}$ is composed of the vectors above:
+$$
+\left[
+	\matrix{
+		1 & 1 & 2 & 6 \cr
+		0 & -1 & -4 & -18 \cr
+		0 & 0 & 1 & 9 \cr
+		0 & 0 & 0 & 1 \cr
+	}
+\right]
+$$
+
+$$
+[u]_{\mathbb{B}} =
+\left[
+	\matrix{
+		1 & 1 & 2 & 6 \cr
+		0 & -1 & -4 & -18 \cr
+		0 & 0 & 1 & 9 \cr
+		0 & 0 & 0 & 1 \cr
+	}
+\right]
+\left[ \matrix{ 1 \cr -3 \cr 9 \cr -1 } \right] = 
+\left[ \matrix{ 22 \cr -51 \cr 18 \cr -1 } \right]
+$$
+
+
+
+
+
+\medskip
+\noindent{\bf 2.} (5 points)
+ Find the rank, the nullity (dimension of null space), a basis for the 
+column space, a basis for the row space of the following matrix
+$$\left[\matrix{1&1&-2&0&1&0\cr 0&1&-1&0&-3&0\cr 0&0&1&1&-13&0\cr 
+0&0&0&0&1&0\cr 0&0&0&0&0&1}\right].$$
+
+rank $A$ = $5$
+
+dim Nul $A$ = $n - rank A$ = $1$
+
+Basis Col $A$ = $\left\{
+	\left[ \matrix{ 1 \cr 0 \cr 0 \cr 0 \cr 0 } \right],
+	\left[ \matrix{ 1 \cr 1 \cr 0 \cr 0 \cr 0 } \right],
+	\left[ \matrix{ -2 \cr -1 \cr 1 \cr 0 \cr 0 } \right],
+	\left[ \matrix{ 1 \cr -3 \cr -13 \cr 1 \cr 0 } \right],
+	\left[ \matrix{ 0 \cr 0 \cr 0 \cr 0 \cr 1 } \right]
+\right\}$ 
+
+Basis for row space $ = \left\{
+	\left[ \matrix{ 1 \cr 1 \cr -2 \cr 0 \cr 1 \cr 0 } \right],
+	\left[ \matrix{ 0 \cr 1 \cr -1 \cr 0 \cr -3 \cr 0 } \right],
+	\left[ \matrix{ 0 \cr 0 \cr 1 \cr 1 \cr -13 \cr 0 } \right],
+	\left[ \matrix{ 0 \cr 0 \cr 0 \cr 0 \cr 1 \cr 0 } \right],
+	\left[ \matrix{ 0 \cr 0 \cr 0 \cr 0 \cr 0 \cr 1 } \right]
+\right\}$
+
+
+
+\medskip\noindent
+{\bf 3.}
+Find the characteristic polynomial for the matrix and two linearly independent 
+eigenvectors for the matrix 
+$$A=\left[\matrix{4 & 4\cr 1&4}\right].
+$$
+
+
+
+\medskip\noindent
+{\bf 4.} Show that $A = \left[\matrix{1 & 2 & 0 \cr 0 & 1 & 3 \cr 0 & 0 & 1}\right]$
+has at most one linear independent eigenvector.
+
+$A - \lambda I = \left[
+	\matrix{
+		1 - \lambda & 2 & 0 \cr
+		0 & 1 - \lambda & 3 \cr
+		0 & 0 & 1 - \lambda
+	}
+\right]$
+so $det A = (1- \lambda)^3$, and the matrix is singular when $\lambda = 1$. We substitute this eigenvalue back into $A - \lambda I$ to get $
+\left[
+	\matrix{
+		0 & 2 & 0 \cr
+		0 & 0 & 3 \cr
+		0 & 0 & 0	
+	}
+\right]
+$. We set this matrix to $0$ and get the solution $Span \left\{ \left[ \matrix{ 1 \cr 0 \cr 0 } \right] \right\}$ and this is the only eigenvector.
+
+
+\medskip
+\noindent{\bf 5.}
+Find the characteristic polynomial for the matrix and three linearly independent 
+eigenvectors for the matrix 
+$$A=\left[\matrix{4&0&-1\cr 0&3&4\cr 0&0&2}\right].
+$$
+ 
+\medskip
+\noindent{\bf 6.}
+Find the values $h$ so that  there are two linearly independent
+eigenvectors corresponding to the eigenvalue $\lambda =4$
+ for the matrix
+$$A=\left[\matrix{4&2&3&3\cr 0&2&h&3\cr 0&0&4&14\cr 0&0&0&2}\right].$$
+
+[Hint: Find $h$ such that the null space of $A-4I_4$ has nullity 2.]
+
+
+\medskip\noindent
+{\bf 7.} Show that $A$ and $A^T$ have the same characteristic polynomial.
+
+[Hint: Show that $\det(A- \lambda I) = \det(A^T - \lambda I)$.]
+
+\end{document}
