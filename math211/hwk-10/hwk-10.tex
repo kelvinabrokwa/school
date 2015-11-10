@@ -24,27 +24,31 @@
 
 \medskip
 \noindent{\bf 1.} (10 points)
-We can represent the polynomial as a set of vectors:
+$$0 = \gamma_1(1) + \gamma_2(1 - t) + \gamma_3(2 - 4t + t^2) + \gamma_4(6 - 18t + 9t^2 +t^3)$$
+$$0 = (-\gamma_4)t^3 + (9\gamma_4 + \gamma_3)t^2 + (-18\gamma_4 - 4\gamma_3 - \gamma_2)t + (\gamma_4 - 2\gamma_3 + \gamma_2 + \gamma_1)$$
 
-$$
-\left\{
-	\left[ \matrix{ 1 \cr 0 \cr 0 \cr 0 }\right],
-	\left[ \matrix{ 1 \cr -1 \cr 0 \cr 0 }\right],
-	\left[ \matrix{ 2 \cr -4 \cr 1 \cr 0 }\right],
-	\left[ \matrix{ 6 \cr -18 \cr 9 \cr 1 }\right]
-\right\}
-$$
-
-In this form it is clear that the set is linearly independent, therefore the set is linearly independent and is a basis for $\mathbb{P}_3$.
-
-The change of basis matrix from $\mathbb{C}$ to $\mathbb{B}$ is composed of the vectors above:
+Since we know $b \neq 0$ then we must show that $\gamma_1 = \gamma_2 = \gamma_3 = \gamma_4 = 0$. When we solve the system composed of the above coefficients set to $0$ we can clearly see below that the matrix has 4 pivoting columns so the system must only have one solution, the trivial solution.
 $$
 \left[
 	\matrix{
 		1 & 1 & 2 & 6 \cr
 		0 & -1 & -4 & -18 \cr
 		0 & 0 & 1 & 9 \cr
-		0 & 0 & 0 & 1 \cr
+		0 & 0 & 0 & -1 \cr
+	}
+\right]
+$$
+
+Since we have shown that $\gamma_1 = \gamma_2 = \gamma_3 = \gamma_4 = 0$ we conclude that the set is also a basis.
+
+The change of basis matrix from $\mathbb{C}$ to $\mathbb{B}$ is:
+$$
+\left[
+	\matrix{
+		1 & 1 & 2 & 6 \cr
+		0 & -1 & -4 & -18 \cr
+		0 & 0 & 1 & 9 \cr
+		0 & 0 & 0 & -1 \cr
 	}
 \right]
 $$
@@ -60,9 +64,8 @@ $$
 	}
 \right]
 \left[ \matrix{ 1 \cr -3 \cr 9 \cr -1 } \right] = 
-\left[ \matrix{ 22 \cr -51 \cr 18 \cr -1 } \right]
+\left[ \matrix{ 10 \cr -15 \cr 0 \cr 1 } \right]
 $$
-
 
 
 
@@ -83,11 +86,11 @@ Basis Col $A$ = $\left\{
 \right\}$ 
 
 Basis for row space $ = \left\{
-	\left[ \matrix{ 1 \cr 1 \cr -2 \cr 0 \cr 1 \cr 0 } \right],
-	\left[ \matrix{ 0 \cr 1 \cr -1 \cr 0 \cr -3 \cr 0 } \right],
-	\left[ \matrix{ 0 \cr 0 \cr 1 \cr 1 \cr -13 \cr 0 } \right],
-	\left[ \matrix{ 0 \cr 0 \cr 0 \cr 0 \cr 1 \cr 0 } \right],
-	\left[ \matrix{ 0 \cr 0 \cr 0 \cr 0 \cr 0 \cr 1 } \right]
+	(1, 1, -2, 0, 1, 0),
+	(0, 1, -1, 0, -3, 0),
+	(0, 0, 1, 1, -13, 0)
+	(0, 0, 0, 0, 1, 0)
+	(0, 0, 0, 0, 0, 1)
 \right\}$
 
 
@@ -122,7 +125,7 @@ $. We set this matrix to $0$ and get the solution $Span \left\{ \left[ \matrix{ 
 
 \medskip
 \noindent{\bf 5.}
-Since this is a triangular matrix we can immediately see that the determinant is the product is the product of the diagonal entries. So the characteristic polynomial is $(4 - \lambda)(3 - \lambda)(2 - \lambda) = 0$. When we substitute each of these into the matrix $A - \lambda I$ we get the solutions $Span \left\{ \left[ \matrix{ 1 \cr 0 \cr 0 } \right] \right\}$, $Span \left\{ \left[ \matrix{ 0 \cr 1 \cr 0 } \right] \right\}$, and $Span \left\{ \left[ \matrix{ 0 \cr 0 \cr 1 } \right] \right\}$ so three linearly indepenedent eigenvectors are $\left[ \matrix{ 1 \cr 0 \cr 0 } \right]$, $\left[ \matrix{ 0 \cr 1 \cr 0 } \right]$, and $\left[ \matrix{ 0 \cr 0 \cr 1 } \right]$.
+Since this is a triangular matrix we can immediately see that the determinant is the product is the product of the diagonal entries. So the characteristic polynomial is $(4 - \lambda)(3 - \lambda)(2 - \lambda) = 0$. When we substitute each of these into the matrix $A - \lambda I$ we get the solutions $Span \left\{ \left[ \matrix{ 1 \cr 0 \cr 0 } \right] \right\}$, $Span \left\{ \left[ \matrix{ 0 \cr 1 \cr 0 } \right] \right\}$, and $Span \left\{ \left[ \matrix{ 1 \cr -8 \cr 2 } \right] \right\}$ so three linearly indepenedent eigenvectors are $\left[ \matrix{ 1 \cr 0 \cr 0 } \right]$, $\left[ \matrix{ 0 \cr 1 \cr 0 } \right]$, and $\left[ \matrix{ 1 \cr -8 \cr 2 } \right]$.
  
  
  
@@ -139,7 +142,7 @@ $A - 4 I_4 = \left[
 \right]$. After row reduction, we have $\left[
 	\matrix{
 		0 & 0 & h+3 & 0 \cr
-		0 & 1 & 0 & 0 \cr
+		0 & 1 & h & 0 \cr
 		0 & 0 & 0 & 0 \cr
 		0 & 0 & 0 & 1
 	}
