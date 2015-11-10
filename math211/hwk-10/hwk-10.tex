@@ -24,13 +24,6 @@
 
 \medskip
 \noindent{\bf 1.} (10 points)
-Show that 
-$${\mathbb B} = \left\{1, 1-t, 2-4t+t^2, 6-18t+9t^2-t^3\right\}$$
-is a basis for $\mathbb{P}_3$, and find the change of basis matrix from 
-${\mathbb B} $ to ${\mathbb C} = \{1, t, t^2, t^3\}$ and the change of the basis 
-matrix from ${\mathbb C} $ to ${\mathbb B}$
-Find $[u]_{\mathbb B}$ for $u = 1 - 3t + 9t^2 -t^3$.
-
 We can represent the polynomial as a set of vectors:
 
 $$
@@ -76,10 +69,6 @@ $$
 
 \medskip
 \noindent{\bf 2.} (5 points)
- Find the rank, the nullity (dimension of null space), a basis for the 
-column space, a basis for the row space of the following matrix
-$$\left[\matrix{1&1&-2&0&1&0\cr 0&1&-1&0&-3&0\cr 0&0&1&1&-13&0\cr 
-0&0&0&0&1&0\cr 0&0&0&0&0&1}\right].$$
 
 rank $A$ = $5$
 
@@ -105,17 +94,14 @@ Basis for row space $ = \left\{
 
 \medskip\noindent
 {\bf 3.}
-Find the characteristic polynomial for the matrix and two linearly independent 
-eigenvectors for the matrix 
-$$A=\left[\matrix{4 & 4\cr 1&4}\right].
-$$
-
+To find the characteristic polynomial we simply set the determinant of $\left[ \matrix{
+	4 - \lambda & 4 \cr
+	1 & 4 - \lambda	
+} \right]$ equal to 0 and solve. We find that it is $(4 - \lambda)^2 - 4 = (\lambda - 2)(\lambda - 6) = 0$. We plug each of the solutions into the matrix $A - \lambda I$ and solve for $0$ to get $Span \left\{ \left[ \matrix{ -2 \cr 1 } \right] \right\}$ when $\lambda = 2$ and $Span \left\{ \left[ \matrix{ 2 \cr 1 } \right] \right\}$ when $\lambda = 6$. So two linearly independent eigenvectors are $\left[ \matrix{ -2 \cr 1 } \right]$ and $\left[ \matrix{ 2 \cr 1 } \right]$.
 
 
 \medskip\noindent
-{\bf 4.} Show that $A = \left[\matrix{1 & 2 & 0 \cr 0 & 1 & 3 \cr 0 & 0 & 1}\right]$
-has at most one linear independent eigenvector.
-
+{\bf 4.}
 $A - \lambda I = \left[
 	\matrix{
 		1 - \lambda & 2 & 0 \cr
@@ -136,24 +122,35 @@ $. We set this matrix to $0$ and get the solution $Span \left\{ \left[ \matrix{ 
 
 \medskip
 \noindent{\bf 5.}
-Find the characteristic polynomial for the matrix and three linearly independent 
-eigenvectors for the matrix 
-$$A=\left[\matrix{4&0&-1\cr 0&3&4\cr 0&0&2}\right].
-$$
+Since this is a triangular matrix we can immediately see that the determinant is the product is the product of the diagonal entries. So the characteristic polynomial is $(4 - \lambda)(3 - \lambda)(2 - \lambda) = 0$. When we substitute each of these into the matrix $A - \lambda I$ we get the solutions $Span \left\{ \left[ \matrix{ 1 \cr 0 \cr 0 } \right] \right\}$, $Span \left\{ \left[ \matrix{ 0 \cr 1 \cr 0 } \right] \right\}$, and $Span \left\{ \left[ \matrix{ 0 \cr 0 \cr 1 } \right] \right\}$ so three linearly indepenedent eigenvectors are $\left[ \matrix{ 1 \cr 0 \cr 0 } \right]$, $\left[ \matrix{ 0 \cr 1 \cr 0 } \right]$, and $\left[ \matrix{ 0 \cr 0 \cr 1 } \right]$.
+ 
+ 
+ 
  
 \medskip
 \noindent{\bf 6.}
-Find the values $h$ so that  there are two linearly independent
-eigenvectors corresponding to the eigenvalue $\lambda =4$
- for the matrix
-$$A=\left[\matrix{4&2&3&3\cr 0&2&h&3\cr 0&0&4&14\cr 0&0&0&2}\right].$$
+$A - 4 I_4 = \left[
+	\matrix{
+		0&2&3&3\cr
+		0&-2&h&3\cr
+		0&0&0&14\cr
+		0&0&0&-2
+	}
+\right]$. After row reduction, we have $\left[
+	\matrix{
+		0 & 0 & h+3 & 0 \cr
+		0 & 1 & 0 & 0 \cr
+		0 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & 1
+	}
+\right]$ and we see that the null space of $A - 4 I_4$ has nullity 2 when $h = -3$.
 
-[Hint: Find $h$ such that the null space of $A-4I_4$ has nullity 2.]
+
+
 
 
 \medskip\noindent
-{\bf 7.} Show that $A$ and $A^T$ have the same characteristic polynomial.
-
-[Hint: Show that $\det(A- \lambda I) = \det(A^T - \lambda I)$.]
+{\bf 7.} 
+We know that $(A + B)^T = A^T + B^T$ and det $A$ = det $A^T$. So $det(A - \lambda I) = det(A - \lambda I)^T = det(A^T - (\lambda I)^T) = det(A^T - \lambda I)$.
 
 \end{document}
