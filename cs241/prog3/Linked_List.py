@@ -97,10 +97,12 @@ class Linked_List:
     # call str(val_object) on them to get their string
     # representations.
     output = '['
-    curr = self._header.next
+    curr = self._header
     while curr.next is not self._trailer:
-      output += ' ' + str(curr.value) + ','
       curr = curr.next
-    output += ' ' + str(curr.value)
+      if curr.next is not self._trailer:
+        output += ' ' + str(curr.value) + ','
+      else:
+        output += ' ' + str(curr.value)
     output += ' ]'
     return output

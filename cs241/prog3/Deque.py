@@ -12,13 +12,16 @@ class Deque:
     return len(self._list)
 
   def push_front(self, val):
-    self._list.insert_element_at(val, 0)
+    #self._list.insert_element_at(val, 0)
+    self._list.insert_element_at(val, len(self._list))
   
   def pop_front(self):
     if len(self._list) < 1:
       return
-    item = self._list.get_element_at(0)
-    self._list.remove_element_at(0)
+    #item = self._list.get_element_at(0)
+    #self._list.remove_element_at(0)
+    item = self._list.get_element_at(len(self._list) - 1)
+    self._list.remove_element_at(len(self._list) - 1)
     return item
 
   def peek_front(self):
