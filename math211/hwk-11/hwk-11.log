@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 NOV 2015 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 NOV 2015 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -80,7 +80,7 @@ hwk-11.aux) )
 Here is how much of TeX's memory you used:
  452 strings out of 493089
  5431 string characters out of 6134842
- 65048 words of memory out of 5000000
+ 63048 words of memory out of 5000000
  3985 multiletter control sequences out of 15000+600000
  9515 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -94,7 +94,7 @@ r10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 
-Output written on hwk-11.pdf (2 pages, 90585 bytes).
+Output written on hwk-11.pdf (2 pages, 90796 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
