@@ -61,17 +61,6 @@ $$
 
 \medskip
 \noindent{\bf 3.}
-Let $\mathcal{D} =\{{\bf d}_1, {\bf d}_2\}$
-and $\mathcal{B}=\{{\bf b}_1, {\bf b}_2 \}$ be the  bases 
-for vector spaces $W$ and $V$ respectively. Let 
-
-$T:\,W\rightarrow V$ with
-$$T({\bf d}_1)=3{\bf b}_1 -3{\bf b}_2 \,\,\, and \,\,\, 
-T({\bf d}_2)=-2{\bf  b}_1+5{\bf b}_2.$$
-
-Find the matrix for $T$ relative to $\mathcal{D}$ and 
-$\mathcal{B}$. 
-
 We see immediately that $[T({\bf d}_1)] = \left[ \matrix{ 3 \cr -3 } \right]$ and $[T({\bf d}_2)] = \left[ \matrix{ -2 \cr 5 } \right]$. So the matrix for $T$ relative to $\mathcal{D}$ and $\mathcal{B}$ is $\left[ \matrix{ 3 & -2 \cr -3 & 5 } \right]$.
 
 
@@ -146,19 +135,18 @@ T(4b_1 - 3b_2) =
 \right]
 $$
 
+Which is
+$$
+5b_2 - 5b_3
+$$
 
 
 
 \medskip
 \noindent{\bf 6.}
-Let $T:\, \mathbb{R}^2\rightarrow \mathbb{R}^2$
-be defined by $T({\bf x})=A{\bf x}$,  where
-$$A=\left[\matrix{2&3\cr 3&2}\right].$$
-\quad Find a basis $\mathcal{B}$ with the property that $[T]_{\mathcal{B}}$ is diagonal. 
+In essence, we must find a basis $\mathcal{B}$ such that the transformation $T$ in that basis is a diagonal matrix: $T([x]_{\mathcal{B}}) = D[x]_{\mathcal{B}}$ where $D$ is a diagonal matrix.  The $\mathcal{B}$ coordinates of a vector $x$, $[x]_{\mathcal{B}}$, can be transformed if we first convert it back to the standard basis (by multiplying by the change of basis matrix $P_{\mathcal{C} \leftarrow \mathcal{B}}$), multiply by $A$ and then convert back to the $\mathcal{B}$ basis (by multiplying it by $P_{\mathcal{B} \leftarrow \mathcal{C}}$). So $T([x]_{\mathcal{B}}) = D[x]_{\mathcal{B}}$ becomes $T([x]_{\mathcal{B}}) =  P_{\mathcal{B} \leftarrow \mathcal{C}} A P_{\mathcal{C} \leftarrow \mathcal{B}} = D[x]_{\mathcal{B}}$.
 
-Since this is a $2x2$ matrix we can immediately see that $det(A -\lambda I) = (\lambda - 5)(\lambda + 1)$. We solve for $0$ to get $\lambda = 5, -1$. So we have $[T]_{\mathcal{B}} = \left[ \matrix{ 5 & 0 \cr 0 & -1 } \right]$
-
-
+Now it is clear that we are looking for a diagonal matrix similar to $A$. We know that the diagonal matrix $D$ similar to $A$ is composed of the eigenvalues. So we have $A = PDP^{-1}$ where the columns of $P$ are the eigenvectors of $A$. So $D = \left[ \matrix{ 5 & 0 \cr 0 & -1 } \right] = [T]_{\mathcal{B}}$ and $P = \left[ \matrix{ 1 & -1 \cr 1 & 1 } \right]$ and the basis $\mathcal{B} = \left\{ \left[ \matrix{ 1 \cr 1 } \right], \left[ \matrix{ -1 \cr 1 } \right] \right\}$.
 
 
 
@@ -166,13 +154,7 @@ Since this is a $2x2$ matrix we can immediately see that $det(A -\lambda I) = (\
 \medskip\noindent
 \medskip
 \noindent{\bf 7.}
-Let $T: \mathbb{P}_1(t) \rightarrow \mathbb{P}_1(t)$
-be defined by $T(a+bt)=(2a+3b)+(3a+2b)t$.
-
-Find a basis $\mathcal{B}$ of $\mathbb{P}_1(t)$ 
-with the property that $[T]_{\mathcal{B}}$ is diagonal. 
-
-
+Similar to the problem above, we can rephrase the problem as finding a diagonal vector such that the matrix of transformation $\left[ \matrix{ 2 & 3 \cr 3 & 2 } \right]$. This matrix has eigenvalues $\lambda = 5,-1$ so the eigenvectors are $Span \left\{ \left[ \matrix{ 1 \cr 1 } \right]\right\}$ and $Span \left\{ \left[ \matrix{ -1 \cr 1 } \right]\right\}$. So a basis for said polynomial space is $\mathcal{B} = \{1 + t, -1 + t\}$.
 
 
 \end{document}
