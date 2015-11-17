@@ -12,10 +12,10 @@ class Queue:
     return len(self._dq)
 
   def enqueue(self, val):
-    self._dq.push_back(val)
+    self._dq.push_front(val)
 
   def dequeue(self):
-    return self._dq.pop_front()
+    return self._dq.pop_back()
 
 if __name__ == '__main__':
   success = True

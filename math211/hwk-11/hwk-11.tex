@@ -1,0 +1,178 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+\usepackage{amsthm}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+
+
+\begin{document} 
+%\maketitle
+
+\noindent
+{\large Math 211 \qquad  Homework 11 \hfill Kelvin Abrokwa-Johnson}
+
+ 
+\medskip
+\noindent{\bf 1.}
+When $\lambda = 2$ our solution set to solving the system set equal to $0$ is $Span \left\{ \left[ \matrix{ -1 \cr 1 \cr 0 } \right] \right\}$ and when $\lambda = 3$ we have $Span \left\{ \left[ \matrix{ -2 \cr 0 \cr 1 } \right], \left[ \matrix{ 0 \cr 1 \cr 0 } \right] \right\}$. So we have:
+
+$$
+P = \left[
+	\matrix{
+	-1 & -2 & 0	\cr
+	1 & 0 & 1 \cr
+	0 & 1 & 0
+	}
+\right],
+D = \left[
+	\matrix{
+		2 & 0 & 0 \cr
+		0 & 3 & 0 \cr
+		0 & 0 & 3	
+	}
+\right]
+$$
+
+
+
+
+
+
+\medskip\noindent
+{\bf 2.}
+(a) We know that the dimension of Nul$(A - \lambda_3 I) = 2$ because, by Theorem 6, an $nxn$ matrix with $n$ distinct eigenvalues is diagonalizable. Since, $A - \lambda_1 I$ and $A - \lambda_2 I$ produce 5 eigenvalues, $A - \lambda_3 I$ must produce 2.
+
+(b) If $A$ is not diagonalizable then dim Nul$(A - \lambda_3I) = 1$.
+(c)
+
+
+
+
+\medskip
+\noindent{\bf 3.}
+Let $\mathcal{D} =\{{\bf d}_1, {\bf d}_2\}$
+and $\mathcal{B}=\{{\bf b}_1, {\bf b}_2 \}$ be the  bases 
+for vector spaces $W$ and $V$ respectively. Let 
+
+$T:\,W\rightarrow V$ with
+$$T({\bf d}_1)=3{\bf b}_1 -3{\bf b}_2 \,\,\, and \,\,\, 
+T({\bf d}_2)=-2{\bf  b}_1+5{\bf b}_2.$$
+
+Find the matrix for $T$ relative to $\mathcal{D}$ and 
+$\mathcal{B}$. 
+
+We see immediately that $[T({\bf d}_1)] = \left[ \matrix{ 3 \cr -3 } \right]$ and $[T({\bf d}_2)] = \left[ \matrix{ -2 \cr 5 } \right]$. So the matrix for $T$ relative to $\mathcal{D}$ and $\mathcal{B}$ is $\left[ \matrix{ 3 & -2 \cr -3 & 5 } \right]$.
+
+
+
+
+\medskip
+\noindent{\bf 4.}
+(a)
+$$
+T(3 - 2t + t^2) = (3 - 2t + t^2) + 2t^2(3 - 2y + t^2) = 3 - 2t + 7t^2 -4t^3 + 2t^4
+$$
+
+(b) First we show that the transformation is closed under addition. Take $p(t) = a_1 + b_1t + c_1t^2$ and $q(t) = a_2 + b_2t + c_2t^2$
+$$
+T(p(t) + q(t)) = T((a_1 + a_2) + (b_1 + b_2)t + (c_1 + c_2)t^2)
+$$
+$$
+= ((a_1 + a_2) + (b_1 + b_2)t + (c_1 + c_2)t^2) + 2t^2((a_1 + a_2) + (b_1 + b_2)t + (c_1 + c_2)t^2)
+$$
+$$
+= (a_1 + b_1t + c_1t^2 + 2t^2a_1 + 2t^3b_1 + 2t^4c_1) + (a_2 + b_2t + c_2t^2 + 2t^2a_2 + 2t^3b_2 + 2t^4c_2)
+$$
+$$
+= T(p(t)) + T(q(t))
+$$
+Now we show that it is closed under scalar multiplication. Take $p(t) = a + bt + ct^2$ and some scalar $k$:
+$$T(kp(t)) = T(ka + kbt + kct^2)$$
+$$= ka + kbt + kct^2 + 2kat^2 + 2kbt^3 + 2kct^4$$
+$$= k(a + bt + ct^2 + 2at^2 + 2bt^3 + 2ct^4)$$
+$$= kT(p(t))$$
+
+(c) We simply define the transformation on the standard polynomials to get:
+$$T(1) = 1 + 2t^2$$
+$$T(t) = t + 2t^3$$
+$$T(t^2) = t^2 + 2t^3$$
+
+so the matrix $T$ relative to the bases is:
+$$
+M = \left[
+	\matrix{
+		1 & 0 & 0 \cr
+		0 & 1 & 0 \cr
+		2 & 0 & 1 \cr
+		0 & 2 & 0 \cr
+		0 & 0 & 2	
+	}
+\right]
+$$
+
+
+
+
+
+
+\medskip
+\noindent{\bf 5.}
+$$
+T(4b_1 - 3b_2) =
+\left[
+	\matrix{
+		0 & 0 & 1 \cr
+		2 & 1 & -2 \cr
+		1 & 3 & 1	
+	}
+\right]
+\left[
+	\matrix{ 4 \cr -3 \cr 0 }
+\right]
+=
+\left[
+	\matrix{ 0 \cr 5 \cr -5}
+\right]
+$$
+
+
+
+
+\medskip
+\noindent{\bf 6.}
+Let $T:\, \mathbb{R}^2\rightarrow \mathbb{R}^2$
+be defined by $T({\bf x})=A{\bf x}$,  where
+$$A=\left[\matrix{2&3\cr 3&2}\right].$$
+\quad Find a basis $\mathcal{B}$ with the property that $[T]_{\mathcal{B}}$ is diagonal. 
+
+Since this is a $2x2$ matrix we can immediately see that $det(A -\lambda I) = (\lambda - 5)(\lambda + 1)$. We solve for $0$ to get $\lambda = 5, -1$. So we have $[T]_{\mathcal{B}} = \left[ \matrix{ 5 & 0 \cr 0 & -1 } \right]$
+
+
+
+
+
+
+\medskip\noindent
+\medskip
+\noindent{\bf 7.}
+Let $T: \mathbb{P}_1(t) \rightarrow \mathbb{P}_1(t)$
+be defined by $T(a+bt)=(2a+3b)+(3a+2b)t$.
+
+Find a basis $\mathcal{B}$ of $\mathbb{P}_1(t)$ 
+with the property that $[T]_{\mathcal{B}}$ is diagonal. 
+
+
+
+
+\end{document}
