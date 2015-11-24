@@ -1,0 +1,172 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+\usepackage{amsthm}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+
+
+\begin{document} \openup .5\jot
+%\maketitle
+
+\noindent
+{\Large Math 211 \hfill Homework 12 \quad Sample Texfile}
+
+\medskip
+\noindent{\bf 1.}
+$$x \cdot w = (6)(3) + (-2)(-1) + (3)(-3) = 5$$
+$$x \cdot x = 6^2 + 2^2 + 3^2 = 49$$
+
+So
+
+$$
+\left(\frac{{\bf x\cdot w}}{{\bf x\cdot x}}\right)
+{\bf x} = \left[
+	\matrix{
+		\frac{30}{49} \cr \frac{-10}{49} \cr \frac{15}{49}	
+	}
+\right]
+$$
+
+
+
+
+
+\medskip
+\noindent{\bf 2.}
+$$||u|| = \sqrt{6^2 + 4^2 + 3^2} = \sqrt{61}$$
+So the unit vector is:
+
+$$
+\left[
+	\matrix{
+		\frac{-6}{\sqrt{61}} \cr
+		\frac{4}{\sqrt{61}} \cr
+		\frac{-3}{\sqrt{61}}
+	}
+\right]
+$$
+
+
+
+
+
+\medskip
+\noindent{\bf 3.} 
+$$u \cdot v = (12)(2) + (3)(-3) | (-5)(3) = 0$$.
+
+So $u$ and $v$ are orthogonal.
+
+
+
+
+\medskip
+\noindent{\bf 4.}
+(a)
+$$\left[\matrix{2\cr -5\cr -3}\right] \cdot \left[\matrix{4\cr -2\cr 6}\right] = 8 + 10 -18 = 0$$
+
+Since the only remaining vector is $0$ its dot product with the other vectors is also $0$, so the set is orthogonal.
+
+(b) Find a nonzero vector orthogonal to the span of the set.
+
+A vector orthogonal to the span of the set can be found by applying the cross product:
+
+$$
+\left[\matrix{2\cr -5\cr -3}\right] \times \left[\matrix{4\cr -2\cr 6}\right] = \left[ \matrix{ -9 \cr -6 \cr 4 } \right]
+$$
+
+
+
+
+
+\medskip
+\noindent{\bf 5.} We know the set is orthogonal because we can reduce the matrix whos columns are composed of the set to row echelon form to get 3 pivoting columns (so the set is linearly independent):
+
+$$
+\left[
+	\matrix{
+		3 & 2 & 1 \cr
+		-3 & 2 & 1 \cr
+		0 & -1 & 4	
+	}
+\right] \rightarrow \left[
+	\matrix{
+		3 & 2 & 1 \cr
+		0 & 2 & 1 \cr
+		0 & 0 & 5
+	}
+\right]
+$$
+
+We can express ${\bf x}=\left[\matrix{5\cr -3\cr 1}\right]$ as a linear combination of set by simly augementing the matrix and solving:
+
+$$
+\left[
+	\matrix{
+		3 & 2 & 1 & 5\cr
+		-3 & 2 & 1 & -3\cr
+		0 & -1 & 4 & 1	
+	}
+\right] \rightarrow \left[
+	\matrix{
+		3 & 0 & 0 & 4 \cr
+		0 & 2 & 1 & 1\cr
+		0 & 0 & 5 & 3
+	}
+\right]
+$$
+
+So ${\bf x} = \frac{4}{3}{\bf u}_1 + \frac{1}{3}{\bf u}_2 + \frac{1}{3}{\bf u}_3$
+
+
+
+
+
+
+\medskip
+\noindent{\bf 6.}
+Let  ${\bf y}=\left[\matrix{2\cr 6}\right]$ and ${\bf u}=
+\left[\matrix{7\cr 1}\right]$. Express ${\bf y} = a{\bf u} + b{\bf z}$
+such that ${\bf z}$ is orthogonal to ${\bf u}$.
+
+
+
+
+
+
+\medskip
+\noindent{\bf 7.} 
+Let  ${\bf y} = \left[\matrix{-3\cr 9}\right]$ 
+and ${\bf u}=
+\left[\matrix{1\cr 2}\right]$.
+Find the distance from ${\bf y}$ to the line passing through ${\bf u}$.
+
+
+
+
+
+
+
+\medskip\noindent
+{\bf 8.} Let  ${\bf x}_1 = \left[\matrix{-2/3\cr 1/3\cr 2/3\cr}\right]$ 
+and ${\bf x}_2=
+\left[\matrix{1/3\cr h \cr 0\cr}\right]$.
+
+Determine $h$ so that the two vectors are orthogonal; 
+
+then
+find positive numbers $a, b$ so that 
+$a{\bf x}_1$ and $b{\bf x}_2$ are orthonormal.
+
+
+\end{document}
