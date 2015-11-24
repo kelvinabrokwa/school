@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 NOV 2015 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 NOV 2015 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -76,9 +76,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (41.87234pt too wide) in paragraph at lines 164--173
+Overfull \hbox (52.82236pt too wide) in paragraph at lines 164--173
 []\OT1/cmr/m/n/10.95 For the set to be or-thonor-mal, we must di-vide each en-t
-ry by its mag-ni-tude. So $\OML/cmm/m/it/10.95 a \OT1/cmr/m/n/10.95 = []$
+ry by its mag-ni-tude. So $\OML/cmm/m/it/10.95 a \OT1/cmr/m/n/10.95 = 1\OML/cmm
+/m/it/10.95 =[]$
  []
 
 [2] (./hwk-12.aux) ) 
@@ -99,7 +100,7 @@ cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb>
-Output written on hwk-12.pdf (2 pages, 87212 bytes).
+Output written on hwk-12.pdf (2 pages, 87420 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
