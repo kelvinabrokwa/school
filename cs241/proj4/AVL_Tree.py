@@ -20,7 +20,6 @@ class AVL_Tree:
     # the tree remains balanced after the operation. Your solution
     # must be recursive. This will involve the introduction of
     # additional private methods.
-    print('inserting:', value)
     self._root = self._balance(self._insert_element_at(self._root, value))
 
   def _insert_element_at(self, node, value):
@@ -33,37 +32,77 @@ class AVL_Tree:
       node._right = self._balance(self._insert_element_at(node._right, value))
       return node
 
-
   def remove_element(self, value):
     # Remove the value specified from the tree, ensuring that
     # the tree remains balanced after the operation. Your solution
     # must be recursive. This will involve the introduction of
     # additional private methods.
-    pass # TODO replace pass with your implementation
+    node = find(value)
+    self._root = self._balance(self._remove_from(self._root))
+
+  def _remove_from(self, node, value):
+    if node._left == None and node._right == None:
+      return None
+    elif node._left == None:
+      return self._balance(node._right)
+    elif node._right == None:
+      return self._balance(node.left)
+    else:
+      curr = node._right
+      while curr._left._left != None:
+        curr = curr._left
+      n = curr._left
+      curr._left = None
+      n._right = node._right
+      n._left = node._left
+      return self._balance(n)
+
+
+  def _find(self, value):
+    curr = self._root
+    while True:
+      if curr == None:
+        return None
+      elif value == curr._value:
+        return curr
+      elif value < curr._value:
+        curr = curr._left
+      elif value > curr._value:
+        curr = curr._right
+
 
   def _balance(self, node):
     if node == None:
       return None
-    elif self._get_balance(node) < 2 or self._get_balance(node) > -2:
-      print('balance:', self._get_balance(node))
+    elif self._get_balance(node) < 2 and self._get_balance(node) > -2:
       return node
-    elif self._get_balance(node) == -2:
-      print(self._get_balance(node._left))
+    balance = self._get_balance(node)
+    if balance == -2:
       if self._get_balance(node._left) == -1: # left-left
-        l = node._left
-        node._left = l._right
-        l._right = node
-        return l
-      else: # left-right
-        lr = node._left._right
-        # DO SOMETHING HERE
-        lr._left = node._left
-        node._left = lr
-        l = lr
-        node._left = lr._right
-        l._right = node
-        return l
+        return self._rotate_right(node)
+      else:                                   # left-right
+        node._left = self._rotate_left(node._left)
+        return self._rotate_right(node)
+    elif self._get_balance(node) == 2:
+      pass
+    elif balance == 2:
+      if self._get_balance(node._right) == 1: # right-right
+        return self._rotate_left(node)
+      else:                                   # right-left
+        node._right = self._rotate_right(node._right)
+        return self._rotate_left(node)
 
+  def _rotate_right(self, node):
+    l = node._left
+    node._left = l._right
+    l._right = node
+    return l
+
+  def _rotate_left(self, node):
+    r = node._right
+    node._right = r._left
+    r._left = node
+    return r
 
   def _get_balance(self, node):
     return self._get_height(node._right) - self._get_height(node._left)
@@ -138,9 +177,8 @@ class AVL_Tree:
 
 if __name__ == '__main__':
   t = AVL_Tree()
-  t.insert_element(5)
-  #for i in range(5, 0, -1):
-  #  t.insert_element(i)
+  for i in range(5, 0, -1):
+    t.insert_element(i)
   print(t.post_order())
 
 
