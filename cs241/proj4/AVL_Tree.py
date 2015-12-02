@@ -37,25 +37,43 @@ class AVL_Tree:
     # the tree remains balanced after the operation. Your solution
     # must be recursive. This will involve the introduction of
     # additional private methods.
-    node = find(value)
-    self._root = self._balance(self._remove_from(self._root))
+    self._root = self._balance(self._remove_from(self._root, value))
+
 
   def _remove_from(self, node, value):
-    if node._left == None and node._right == None:
+    if node == None:
       return None
-    elif node._left == None:
-      return self._balance(node._right)
-    elif node._right == None:
-      return self._balance(node.left)
+    elif node._value == value: # found the value
+      if node._left == None and node._right == None: # no children of node to remove
+        return None
+      elif node._left == None: # item to remove only has right child
+        return self._balance(node._right)
+      elif node._right == None: # item to remove only has left child
+        return self._balance(node._left)
+      else: # node to remove has two children, replace it with its smallest right child
+        node._value = self._get_min(node._right)._value
+        node._right = self._balance(self._remove_min(node._right))
+        return self._balance(node)
+    elif node._value > value:
+      node._left = self._remove_from(node._left, value)
+      return self._balance(node)
     else:
-      curr = node._right
-      while curr._left._left != None:
-        curr = curr._left
-      n = curr._left
-      curr._left = None
-      n._right = node._right
-      n._left = node._left
-      return self._balance(n)
+      node._right = self._remove_from(node._right, value)
+      return self._balance(node)
+
+
+  def _get_min(self, node):
+    if node._left == None:
+      return node
+    else:
+      return self._get_min(node._left)
+
+  def _remove_min(self, node):
+    if node._left == None:
+      return node._right
+    else:
+      node._left = self._remove_min(node._left)
+      return node
 
 
   def _find(self, value):
@@ -117,6 +135,9 @@ class AVL_Tree:
     return '[ ' + ''.join([ str(x) + ', ' for x in result  ]) + ']'
 
   def _in_order(self, node, result):
+    if node == None:
+      return
+
     if node._left != None:
       self._in_order(node._left, result)
 
@@ -135,6 +156,10 @@ class AVL_Tree:
     return '[ ' + ''.join([ str(x) + ', ' for x in result  ]) + ']'
 
   def _pre_order(self, node, result):
+
+    if node == None:
+      return
+
     result.append(node._value)
 
     if node._left != None:
@@ -153,6 +178,10 @@ class AVL_Tree:
     return '[ ' + ''.join([ str(x) + ', ' for x in result  ]) + ']'
 
   def _post_order(self, node, result):
+
+    if node == None:
+      return
+
     if node._left != None:
       self._post_order(node._left, result)
 
@@ -180,5 +209,10 @@ if __name__ == '__main__':
   for i in range(5, 0, -1):
     t.insert_element(i)
   print(t.post_order())
+  t.remove_element(5)
+  print(t.post_order())
+  t.remove_element(1)
+  print(t.post_order())
+
 
 
