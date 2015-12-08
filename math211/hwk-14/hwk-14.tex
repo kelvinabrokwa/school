@@ -1,0 +1,142 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{amsfonts,amstext}
+\usepackage{amsthm}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+
+
+\begin{document} 
+%\maketitle
+
+\noindent
+{\Large Math 211 \hfill Homework 14 \hfill Kelvin Abrokwa-Johnson}
+
+  \bigskip
+\noindent{\bf 1.} 
+We know that $A^{T}Ax = Ab$.
+
+$$
+A^{T}A =
+	\left[\matrix{ 1 & 1 & 1 \cr 3 & -1 & 1 }\right]
+	\left[\matrix{ 1&3\cr 1 & -1\cr 1& 1 }\right] = 
+	\left[\matrix{ 3 & -3 \cr -3 & 11 }\right]
+$$
+
+$$
+A^{T}A =
+	\left[\matrix{ 1 & 1 & 1 \cr 3 & -1 & 1 }\right]
+	\left[\matrix{ 5 \cr 1 \cr 0 }\right]	=
+	\left[\matrix{ 6 \cr -16 }\right]	
+$$
+
+So, solving for $x$ we find our solution:
+
+$$
+\hat{x} = 	\left[\matrix{ \frac{3}{4} \cr -\frac{5}{4} }\right]	
+$$
+
+
+
+
+
+\bigskip
+\noindent{\bf 2.}
+We know that the orthogonal projection $\hat{b} = \frac{b \cdot a_1}{a_1 \cdot a_1}a_1 + \frac{b \cdot a_2}{a_2 \cdot a_2}a_2 + \frac{b \cdot a_2}{a_2 \cdot a_2}a_2$. So,
+
+$$
+\hat{b} = \left[\matrix{5\cr2 \cr 3\cr 6 \cr}\right],
+\hat{x} = \left[\matrix{ 1/3 \cr 14/3 \cr 5/3 }\right] 
+$$
+
+
+
+
+\bigskip
+\noindent{\bf 3.}
+Since we have the $QR$ factorizationn of A the solution is immediate. We can simply calculate $\hat{x} = R^{-1}Q^{T}b$ to get:
+
+$$
+\hat{x} = \left[\matrix{ 2.9 \cr 0.9 }\right]
+$$
+
+
+
+
+
+\bigskip\noindent
+{\bf 4.} We know that ${\rm Col}(A)^{\perp}$ is Nul $A^{T}$, so:
+
+$$
+\left[
+	\matrix{
+		1 & 1 & 1 & 1 \cr
+		-1 & 4 & -1 & 4
+	}
+\right] \rightarrow
+\left[
+	\matrix{
+		1 & 0 & 1 & 0 \cr
+		0 & 1 & 0 & 1
+	}
+\right]
+$$
+
+So we have ${\rm Col}(A)^{\perp} =$  Nul $A^{T} = $ Span $\left\{ 
+	\left[ \matrix{ -1 \cr 0 \cr 1 \cr0 } \right],
+	\left[ \matrix{ 0 \cr -1 \cr 0 \cr 1 } \right]
+\right\}$
+
+
+
+\bigskip
+\noindent{\bf 5.} 
+$$
+X = \left[
+	\matrix{
+		1 & 2 \cr
+		1 & 3 \cr
+		1 & 5 \cr
+		1 & 6 \cr	
+	}
+\right],
+y = \left[
+	\matrix{
+		3 \cr 2 \cr 1 \cr 0
+	}
+\right]
+$$
+
+$$
+X^{T}X = \left[
+	\matrix{
+		4 & 16 \cr
+		16 & 74
+	}
+\right]
+$$
+
+$$
+X^{T}y = \left[
+	\matrix{
+		6 \cr 17	
+	}
+\right]
+$$
+
+Hence. $\beta = \left[
+	\matrix{
+			4.3 \cr -0.7
+	}
+\right]$
+\end{document}
