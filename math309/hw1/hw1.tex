@@ -1,0 +1,109 @@
+\documentclass[11pt]{article} % 
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\qed}{{\hfill {\rm QED}}}
+
+\begin{document} 
+%\maketitle
+
+Kelvin Abrokwa-Johnson \\
+30 January 2016 \\
+Math 309
+
+\begin{center} Homework 1 \end{center}
+
+{\bf 7.} Less $S = {0, 1}$ and $F = R$. In $\mathcal{F}(S, R$, show that $f=g$ and $f + g = h$, where $f(t) = 2t + 1, g(t) = 1 + 4t + 2t^2$, and $h(t) = 5^t + 1$.
+
+\medskip
+{\bf Solution:}
+
+For $0$:
+
+$$f{0} = 2(0) + 1 = g(0) = 1 + 4(0) - 2(0)^2 = 1$$
+$$h(0) = 5^0 + 1 = f(0) + g(0) = 1 + 1 = 2$$
+
+For $1$:
+
+$$f(1) = 2(1) + 1 = g(1) = 1 + 4(1) - 2(1)^2 = 3$$
+$$h(1) = 5^1 + 1 = f(1) + g(1) = 3 + 3 = 6$$
+
+Thus, we have shown what was to be shown.
+
+
+\vskip .5in
+{\bf 8.} In any vector space $V$, show that $(a + b)(x + y) =  ax + ay + bx + by$ for any $x,y \in V$ and any $a,b \in F$.
+
+\medskip
+{\bf Solution:}
+
+
+\vskip .5in
+{\bf 12.} A real-valued function f defined on the real line is called an even function if $f(-t) = f(t)$ for each real number $t$. Prove that the set of even functions defined on the real line with the operations of addition and scalar multiplication defined in Example 3 is a vector space.
+
+\medskip
+{\bf Solution:}
+\begin{itemize}
+
+
+\item Suppose $E$ is the set of even functions. Take the function $f \in E$, . Since $f(-t) = f(t)$, we know that $af(-t) = af(t)$ for all $a \in {\bf R}$, so $(af)(t) \in E$, i.e. closed under scalar multiplication.
+
+\item Take $f,g \in E$. $(f + g)(t) = f(t) + g(t) = f(-t) + g(-t) = (f + g)(-t)$. In short $(f + g)(t) = (f + g)(-t)$ so $(f + g)(t) \in E$, i.e. closed under addition.
+
+\item Since $f(t) = f(-t)$ for $f \in E$ where $f(t) = 0$, $f(t) = 0 \in E$, i.e. has a $0$ function.
+
+\end{itemize}
+
+\pagebreak
+
+{\bf 18.} Let $V = \{ (a_1, a_2): a_1, a_2 \in {\bf R} \}$. For $(a_1, a_2), (b_1, b_2) \in V$ adn $c \in {\bf R}$, define
+
+\begin{center}
+$(a_1, a_2) + (b_1, b_2)  = (a_1 + 2b_1, a_2 + 3b_2)$
+and 
+$c(a_1, a_2) = (ca_1, ca_2)$
+\end{center}
+
+Is $V$ a vector space over ${\bf R}$ wit these operations?
+
+\medskip
+{\bf Solution:}
+
+No, $V$ is not a vector space over ${\bf R}$.
+
+Take $a_1, a_2 \neq 0 \in {\bf R}$. Since $(a_1, a_2) + (0, 0) = (a_1, a_2)$ and $(0, 0) + (a_1, a_2) = (2a_1, 3a_2)$, i.e. $(a_1, a_2) + 0 \neq 0 + (a_1, a_2)$. The set does not have commutative addition so it is not a vector space.
+
+
+\vskip .5in
+{\bf 21.} Let $V$ adn $W$ be vector spaces over a field $F$. Let
+
+$$Z = \{ (v,w): v \in V, w \in W \}$$
+
+Prove that $Z$ is a vector space over $F$ with operations:
+
+\begin{center}
+$(v_1, w_1) + (v_2, w_2) = (v_1 + v_1, w_1 + w_2)$ and $c(v_1, w_1) = (cv_1, cw_1)$
+\end{center}
+
+\medskip
+{\bf Solution:}
+
+\begin{itemize}
+
+\item Take $v_1, v_2 \in V$, $w_1, w_2 \in W$. Since $V$ and $W$ are vector spaces, $v_1 + v_2 \in V$ and $w_1 + w_2 \in W$, so it follows that $(v_1, w_1) + (v_2, w_2) \in Z$, i.e. closed under addition.
+
+\item Take $v \in V, w \in W, c \in F$. Since $V$ and $W$ are vector spaces, $cv \in V$ and $cw \in W$. So, $c(v, w) = (cv, cw) \in Z$, i.e. closed under scalar multiplication.
+
+\end{itemize}
+
+\end{document}
