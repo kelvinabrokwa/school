@@ -1,0 +1,91 @@
+\documentclass[11pt]{article} % 
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\qed}{{\hfill {\rm QED}}}
+
+\begin{document} 
+
+{\bf \underline{Special Matrices}}
+
+
+\medskip
+
+
+{\bf Diagonally Dominant}
+
+A matrix is {\bf diagonally dominant} when
+
+$$|a_{ii}| \geq \sum_{j=1,j \neq i}^{n} |a_{ij}|$$
+
+holes for each $i = 1,2,...,n$.
+
+It is {\bf strictly diagonally dominant} when,
+
+$$|a_{ii}| > \sum_{j=1,j \neq i}^{n} |a_{ij}|$$
+
+
+\vskip .4in
+
+
+{\bf Symmetric Positive Definite Matrices (SPD)}
+
+A matrix $A$ is {\bf symmertric positive definite} if it is symmetric and if $x^tAx > 0$ for every $n$-dimensional vector $x \neq 0$.
+
+If $A$ is an $n \times n$ SPD matrix, then
+
+\begin{itemize}
+\item $A$ has an inverse
+\item $a_{ii} > 0$ for each $i = 1, 2, ..., n$
+\item $max_{1 \leq k, j \leq n} |a_{kj}| \leq max_{1 \leq i \leq n} |a_{ii}|$
+\item $(a_{ij})^2 < a_{ii}a_{jj}$, for each $i \leq j$
+\end{itemize}
+
+The matrix $A$ is positive definite if and only if $A$ can be factored in the form $LDL^t$, where $L$ is lower triangular with $1$s on its diagonal and $D$ is a diagonal matrix with positive diagonal entries.
+
+The matrix $A$ is positive definite if and only if $A$ can be factored in the form $LL^t$, where $L$ is lower triangular with nonzero diagonal entries.
+
+\vskip .4in
+
+
+{\bf Cholesky ($LL^T$)}
+
+
+\vskip .4in
+
+
+{\bf Tridiagonal $LU$ Factorization}
+
+\vskip .4in
+
+
+{\bf Vector Norms}
+
+A vector norm on $R^n$ is a function, $|| \cdot ||$, from $R^n$ into $R$ with the following properties:
+
+\begin{itemize}
+\item $||x|| \geq 0$ for all $x \in R^n$
+\item $||x|| = 0$ if and only if $x = 0$
+\item $||\alpha x|| = |\alpha| ||x||$ for all $\alpha \in R$, $x \in R^n$
+\item $||x + y|| \leq ||x|| + ||y||$ for all $x, y \in R^n$
+\end{itemize}
+
+The $l_2$ norm is defined as such:
+
+$$||x||_2 =  \left\{ \sum_{i=1}^{n} x_{i}^{2} \right\}^{\frac{1}{2}}$$
+
+The $l_{\infty}$ norm is defined as such:
+
+$$||x||_{\infty} =  max_{1 \leq i \leq n} |x_{i}|$$
+
+\end{document}
