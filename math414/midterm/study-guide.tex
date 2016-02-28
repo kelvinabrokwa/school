@@ -1,0 +1,199 @@
+\documentclass[11pt]{article} % 
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\qed}{{\hfill {\rm QED}}}
+
+\begin{document} 
+
+{\bf \underline{Special Matrices}}
+
+
+\medskip
+{\bf Diagonally Dominant}
+
+A matrix is {\bf diagonally dominant} when
+
+$$|a_{ii}| \geq \sum_{j=1,j \neq i}^{n} |a_{ij}|$$
+
+holes for each $i = 1,2,...,n$.
+
+It is {\bf strictly diagonally dominant} when,
+
+$$|a_{ii}| > \sum_{j=1,j \neq i}^{n} |a_{ij}|$$
+
+
+\vskip .4in
+{\bf Symmetric Positive Definite Matrices (SPD)}
+
+A matrix $A$ is {\bf symmertric positive definite} if it is symmetric and if $x^tAx > 0$ for every $n$-dimensional vector $x \neq 0$.
+
+If $A$ is an $n \times n$ SPD matrix, then
+
+\begin{itemize}
+\item $A$ has an inverse
+\item $a_{ii} > 0$ for each $i = 1, 2, ..., n$
+\item $max_{1 \leq k, j \leq n} |a_{kj}| \leq max_{1 \leq i \leq n} |a_{ii}|$
+\item $(a_{ij})^2 < a_{ii}a_{jj}$, for each $i \leq j$
+\end{itemize}
+
+The matrix $A$ is positive definite if and only if $A$ can be factored in the form $LDL^t$, where $L$ is lower triangular with $1$s on its diagonal and $D$ is a diagonal matrix with positive diagonal entries.
+
+The matrix $A$ is positive definite if and only if $A$ can be factored in the form $LL^t$, where $L$ is lower triangular with nonzero diagonal entries.
+
+\vskip .4in
+{\bf Cholesky ($LL^T$)}
+
+
+\vskip .4in
+{\bf Tridiagonal}
+
+$O(n)$ time multiplication
+
+
+\vskip .4in
+{\bf Vector Norms}
+
+A vector norm on $R^n$ is a function, $|| \cdot ||$, from $R^n$ into $R$ with the following properties:
+
+\begin{itemize}
+\item $||x|| \geq 0$ for all $x \in R^n$
+\item $||x|| = 0$ if and only if $x = 0$
+\item $||\alpha x|| = |\alpha| ||x||$ for all $\alpha \in R$, $x \in R^n$
+\item $||x + y|| \leq ||x|| + ||y||$ for all $x, y \in R^n$
+\end{itemize}
+
+The $l_2$ norm is defined as such:
+
+$$||x||_2 =  \left\{ \sum_{i=1}^{n} x_{i}^{2} \right\}^{\frac{1}{2}}$$
+
+The $l_{\infty}$ norm is defined as such:
+
+$$||x||_{\infty} =  max_{1 \leq i \leq n} |x_{i}|$$
+
+The distance between two vectors is defined as the norm of the difference of the vectors.
+
+\medskip
+A sequence $\{x^{(k)}\}_{k=1}^{\infty}$ of vectors in $R^n$ is said to converge to $x$ with respect to the norm $|| \cdot ||$ if, given any $\epsilon > 0$, there exists an integer $N(\epsilon)$ such that
+
+\begin{center}
+$|| x^{(\epsilon)} - x || < \epsilon$, for all $k \geq N(\epsilon)$
+\end{center}
+
+\medskip
+The sequence of vectors $\{x^{(k)}\}$ converges to $x$ in $R^n$ with respect to the $l_{\infty}$ norm if and only if $lim_{k \rightarrow \infty} x^{(k)} = x_i$, for each $i = 1,2,...,n$.
+
+
+
+\vskip .4in
+{\bf Matrix Norms}
+
+A matrix norm on the set of all $n \times n$ matrices is a real-valued function, $|| \cdot ||$, defined on this set, satisfying for all $n \times n$ matrices $A$ and $B$ and all real numbers $\alpha$:
+
+\begin{itemize}
+\item $||A|| \geq 0$
+\item $||A|| = 0$ if and only if $A$ is $0$, the matrix with all $0$ entries
+\item $|| \alpha A || = |\alpha| ||A||$
+\item $|| A + B || \leq ||A|| + ||B||$
+\item $||AB|| \leq ||A|| ||B||$
+\end{itemize}
+
+The distance between $n \times n$ matrices $A$ and $B$ with respect to this matrix norm is $||A − B||$.
+
+If $|| \cdot ||$ is a vector norm on $R^n$, then
+
+$$||A|| = max_{||x||=1} ||Ax||$$
+
+is a matrix norm.
+
+\medskip
+For any vector $z \neq 0$, matrix $A$, and any natural norm $|| \cdot ||$, we have
+
+$$||Az|| \leq ||A|| \cdot ||z||$$
+
+
+\medskip
+If $A = (aij)$ is an $n \times n$ matrix, then
+
+$$
+||A||_{\infty} = max_{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}|
+$$
+
+(max row sum).
+
+
+
+\newpage
+\vskip .4in
+{\bf Spectral Radius}
+
+The spectral radius $\rho(A)$ of a matrix $A$ is defined by
+
+\begin{center}
+$\rho(A) = max |\lambda|$, where $\lambda$ is an eigenvalue of $A$
+\end{center}
+
+
+\vskip .4in
+{\bf Jacobi Method}
+
+The Jacobi method can be written in the form $x^{(k)} = T x^{(k-1)} + c$ by splitting $A$ into its diagonal and off-diagonal parts.
+
+$$A = D - L - U$$
+
+So we have,
+
+\begin{center}
+$x^{(k)} = D^{-1}(L + U)x^{(k-1)}+D^{-1}b$, $k=1,2,....$
+\end{center}
+
+To shorten,
+
+\begin{center}
+$T_j = D^{-1}(L + U)$ and $c_j = D^{-1}b$
+\end{center}
+
+So we have 
+
+$$
+x^{(k)} = T_jx^{(k-1)} + c_j
+$$
+
+
+
+\vskip .4in
+{\bf Gauss-Siedel Method}
+
+We have
+
+$$x^{(k)} =(D-L)^{-1}Ux^{(k-1)}+(D-L)^{-1}b$$
+
+Letting
+
+\begin{center}
+$T_g = (D-L)^{-1}U$ and $c_g = (D-L)^{-1}b$
+\end{center}
+
+We get
+
+$$x^{(k)} = T_gx_{(k-1)} + c_g$$
+
+Note: for $D - L$ to be nonsingular, it is necessary and sufficient that $a_{ii} \neq 0$.
+
+
+\vskip .4in
+{\bf Conjugate Gradient Method}
+
+Matrix must be positive definite.
+
+\end{document}
