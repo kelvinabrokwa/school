@@ -1,0 +1,81 @@
+\documentclass[11pt]{article} % 
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+\usepackage{enumitem}
+
+\begin{document} 
+
+Kelvin Abrokwa-Johnson \\
+28 February 2015          \\
+Principles of Programming Languages
+
+\begin{center}
+Homework 3
+\end{center}
+
+{\bf 1.}
+
+B: $<x,2>$, $<y,3>$, $<x,4>$, $<a,5>$
+
+A: $<x,0>$, $<z,2>$, $<y,3>$, $<a,10>$
+
+C: $<y,9>$, $<x,1>$, $<z,4>$, $<a,5>$
+
+A: $<x,0>$, $<y,3>$, $<a,9>$, $<z,4>$
+
+D: $<a,6>$, $<y,3>$, $<a,9>$, $<z,4>$
+
+
+\vskip 0.3in
+{\bf 2.}
+
+\begin{enumerate}[label=\alph*.]
+
+\item
+\begin{enumerate}
+\item $ + * a$ $b * /$ $c$ $d$ $3$
+\item $a$ $b$ $*$ $c$ $d$ $/$ $3$ $*$ $+$
+\item $(+ (*$ $a$ $b) (*$ $(/$ $c$ $d)$ $3))$
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item $-$ $*$ $+$ $a$ $b$ $c$ $*$ $d$ $-$ $e$ $2$
+\item $a$ $b$ $+$ $c$ $*$ $d$ $e$ $2$ $-$ $*$ $-$
+\item $(-$ $(*$ $(+$ $a$ $b)$ $c) (*$ $d$ $(-$ $e$ $2)))$
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item $- a * b + c$ $/ - d$ $1 + e$ $7$
+\item $a$ $b$ $c$ $d$ $1 - e$ $7 + / + *$ $-$
+\item $(-$ $a (*$ $b ($ $+$ $c$ $($ $/$ $(-$ $d$ $1) (+$ $e$ $7)))))$
+\end{enumerate}
+
+\end{enumerate}
+
+
+\vskip 0.3in
+{\bf 3.} $0 < 3 == 3 < 2$
+
+\begin{enumerate}[label=\alph*.]
+\item Python: $(0 < 3)$ and $(3 == 3)$ and $(3 < 2)$ - {\bf FALSE}
+\item C-like: $(0 < (3 == 3) < 2)$ - {\bf TRUE}
+\item Fortran: $((0 < 3) == 3) < 2$ - {\bf TRUE}
+\end{enumerate}
+
+
+\vskip 0.3in
+{\bf 4.}
+
+FileNotFound \\
+ValueError \\
+IsADirectoryError \\
+IOError - Permission Denied
+
+\end{document}
