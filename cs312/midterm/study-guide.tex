@@ -1,0 +1,177 @@
+\documentclass[11pt]{article} % 
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\qed}{{\hfill {\rm QED}}}
+
+\begin{document} 
+
+\begin{center}
+{\bf Principles of Programming Languages Midterm Study Guide}
+\end{center}
+
+{\bf Syntax}
+\medskip
+
+\begin{itemize}
+
+\item {\bf syntax}: a precise description of all its grammatically correct programs
+
+\item {\bf lexical syntax}: all the basic symbols of the language
+
+\item {\bf concrete syntax}: rules for writing expressions, statements and programs
+
+\item {\bf abstract syntax}: internal representation of the program, favoring content over form
+
+\item {\bf metalanguage}: a language used to define other languages
+
+\item {\bf grammar}: a metalanguage used to define the syntax of a language
+
+\end{itemize}
+
+{\bf Backus-Naur Form (BNF)}: stylized version of a context-free grammar
+
+\medskip
+Set of
+
+\begin{itemize}
+\item $productions$: $P$
+\item $terminal$ symbols: $T$
+\item $nonterminal$ symbols: $N$
+\item $start$ symbol: $S \in N$
+\end{itemize}
+
+A $production$ has the form $A \rightarrow \omega$ where $A \in N$ and $\omega \in (N \cup T)$
+
+\medskip
+{\bf Parse Trees}
+
+A graphical representation of a derivation.
+
+\begin{itemize}
+\item each internal node of the tree corresponds to a step in the derivation
+\item the children of a node represents a right-hand side of a production
+\item each leaf node represents a symbol of the derived string, reading from left to right
+\end{itemize}
+
+\medskip
+{\bf Associativity and Precedence}
+\medskip
+
+A grammar is {\bf ambiguous} if one of its strings has two or more different parse trees.
+
+\medskip
+{\bf Extended BNF (EBNF)}
+\medskip
+
+{\bf BNF}:
+\begin{itemize}
+\item recursive for iteration
+\item nonterminals for grouping
+\end{itemize}
+
+{\bf EBNF: additional metacharacters}:
+\begin{itemize}
+\item { } for a series of zero of more
+\item ( ) for a list, must pick one
+\item $[ ]$ for an optional list, pick one or none
+\end{itemize}
+
+We can always write an EBNF grammar as a BNF grammar
+
+\medskip
+{\bf Identifier}: sequence of letters and digits, starting with a letter
+
+\medskip
+{\bf Concrete Syntax}:  based on a parse of its Tokens
+
+\pagebreak
+{\bf Lexer}:
+
+\begin{itemize}
+\item input: characters
+\item output: tokens
+\item separate
+\begin{itemize}
+\item speed: 75\% of time for non-optimizing
+\item simpler design
+\item character sets
+\item end of line convention
+\end{itemize}
+\end{itemize}
+
+{\bf Parser}:
+\begin{itemize}
+\item Based on BNF/EBNF grammar
+\item Input: tokens
+\item Output: abstract syntax tree (parse tree)
+\item Abstract syntax: parse tree with punctuation, many nonterminal discarded
+\end{itemize}
+
+{\bf Semantic Analysis}
+\begin{itemize}
+\item Check that all identifiers and declared
+\item Perform type checking
+\item Insert implied conversion operators (i.e., make them explicit)
+\end{itemize}
+
+{\bf Code Optimization}
+\begin{itemize}
+\item Evaluate constant expressions at compile-time
+\item Reorder code to improve cache performance
+\item Eliminate common subexpressions
+\item Eliminate unnecessary code
+\end{itemize}
+
+{\bf Code Generation}
+\begin{itemize}
+\item Output: machine code
+\item Instruction selection
+\item Register management
+\item Peephole optimization
+\end{itemize}
+
+\pagebreak
+
+{\bf Interpreter}
+\begin{itemize}
+\item Replaces last 2 phases of a compiler
+\item Input:
+\begin{itemize}
+\item Mixed: intermediate code
+\item Pure: stream of ASCII characters
+\end{itemize}
+\item Mixed interpreters
+\begin{itemize}
+\item Java, Perl, Python, Haskell, Scheme
+\end{itemize}
+\item Pure interpreters
+\begin{itemize}
+\item most Basic, shell commands
+\end{itemize}
+\end{itemize}
+
+{\bf Binding}: an association between an entity (such as a variable) and a property (such as its value)
+\begin{itemize}
+\item {\bf static}: if the association occurs before run-time
+\item {\bf dynamic}: if the association occurs at run-time
+\item The {\bf lifetime} of a variable name refers to the time interval during which memory is allocated
+\end{itemize}
+
+{\bf Scope}: the collection of statements which can access the name binding
+\begin{itemize}
+\item {\bf static scoping}: a name is bound to a collection of statements according to its position in source program
+\item same as {\bf lexical scoping}
+\end{itemize}
+
+\end{document}
