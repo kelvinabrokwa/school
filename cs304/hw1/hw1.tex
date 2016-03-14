@@ -62,25 +62,21 @@ int int_size_is_32() {
 {\bf 2.}
 
 \begin{enumerate}[label=\alph*)]
-
-
 \item 
-Doesn't perform sign extension.
+The code is incorrect because it doesn't perform the appropriate sign extension.
 
 \item
 \hr
 \begin{lstlisting}[language=C]
 int xbyte(packed_t word, int bytenum) {
-	word = word >> (bytenum << 3);
-	word = word << 24;
-	word = word >> 24;
-	return word;
+	word = word << ((3 - bytenum) << 3);
+	return word >> 24;
 }
 \end{lstlisting}
 \hr
 \end{enumerate}
 
-\vspace{0.5in}
+\pagebreak
 {\bf 3.}
 \begin{enumerate}[label=\alph*)]
 \item
@@ -160,24 +156,31 @@ In any case (where the most significant bit of $x$ is $0$ or $1$) when we shift 
 \begin{center}
 	\begin{tabular}{ | l | l | l | l | l | l |}
 		\hline
-		description & Hex & M & E & V & D \cr \hline
-		$-0$ & & & & $0$ & $-0.0$ \cr \hline
-		smallest value $>$ $2$ & & & & & \cr \hline
-		$512$ & & &  & $512$ & $512.0$ \cr \hline
-		largest denormalized & & & & & \cr \hline
-		$-\infty$ & & - & - & $-\infty$ & $-\infty$ \cr \hline
-		number with hex $3BB0$ & & & & & \cr \hline
+		description & Hex & M & E & V & D \cr \hline \hline
+		$-0$ & $0x8000$ & $0$ & $-14$ & $0$ & $-0.0$ \cr \hline
+		smallest value $>$ $2$ & $0x8$ & $1$ & $2$ & $2 + \frac{1}{2^{10}}$ & $2 + \frac{1}{2^{10}}$\cr \hline
+		$512$ & $0x7C00$ & $0$ & $31$ & $512$ & $512.0$ \cr \hline
+		largest denormalized & $0x3FF$  & $1023$ & $-14$ & $0.999023$ & $0.9990234375$ \cr \hline
+		$-\infty$ & $0xFF0000$ & - & - & $-\infty$ & $-\infty$ \cr \hline
+		number with hex $0x3BB0$ & $0x3BB0$ & $1110110000$ & $14$ & $14.921875$ & $14.921875$ \cr \hline
 	\end{tabular}
 \end{center}
 
 \vspace{0.5in}
 {\bf 8.}
 \begin{enumerate}[label=\alph*)]
-\item (float) x == (float)
-\item dx - dy == (double) (x-y)
-\item (dx + dy) + dz == dx + (dy + dz)
-\item (dx * dy) * dz == dx * (dy * dz)
-\item dx / dx == dz / dz
+\item $(float) x == (float) dx$: \\
+True because the casting does not affect the bits or get rid of them in this case
+
+\item $dx - dy == (double) (x-y)$: \\
+
+\item $(dx + dy) + dz == dx + (dy + dz)$: \\
+True because Abelian groups have associative addition in general
+
+\item $(dx * dy) * dz == dx * (dy * dz)$: \\
+
+\item $dx / dx == dz / dz$: \\
+This does not work in the case of $0$ division
 \end{enumerate}
 
 
@@ -189,10 +192,10 @@ float fpwr2(int x)
 	/* Result exponent and fraction */
 	unsigned exp, frac;
 	unsigned u;
-	if (x < _________){
+	if (x < -23){
 		/* Too small. Return 0.0 */
-		exp = _________;
-		frac = _________;
+		exp = 0;
+		frac = 0;
 	} else if (x < _________){
 		/* Denormalized result */
 		exp = _________;
@@ -203,8 +206,8 @@ float fpwr2(int x)
 		frac = _________;
 	} else {
 		/* Too big. Return +oo */
-		exp = _________;
-		frac = _________;
+		exp = 0xFF;
+		frac = 0;
 	}
 	/* Pack exp and frac into 32 bits */
 	u = exp << 23 | frac;
@@ -215,5 +218,10 @@ float fpwr2(int x)
 
 \vspace{0.5in}
 {\bf 10.}
+\begin{enumerate}[label=\alph*)]
+\item fractional binary of $0x40490FDB = 01000000010010010000111111011011$
+\item fractional binary of $\frac{22}{7} = 01000000010010010010010010010010$
+\item They diverge at the $17^{th}$ digit
+\end{enumerate}
 
 \end{document}
