@@ -2,6 +2,7 @@
 
 \usepackage{listings}
 \usepackage{amsmath}
+\usepackage{enumitem}
 
 \setlength{\oddsidemargin}{-0.15in}
 \setlength{\topmargin}{-0.5in}
@@ -9,6 +10,7 @@
 \setlength{\textheight}{9in}
 \setlength\parindent{0pt}
 
+\newcommand{\hr}{\noindent\rule{14cm}{0.4pt}}
 
 \begin{document} 
 %\maketitle
@@ -20,61 +22,147 @@ CS 304
 \begin{center} Homework 1 \end{center}
 
 
-{\bf 2.67}
+{\bf 1.}
 
-A. The code fails to comply with the C standard because it attempts to shift beyond the word size. In many systems the shift amount will be applied $mod$ the word size so an attempt to shift by $32$ with result in a $32 \mod 32 = 0$ shift.
+\begin{enumerate}[label=\alph*)]
 
-B. \\
-\noindent\rule{12cm}{0.4pt}
+\item
+The code fails to comply with the C standard because it attempts to shift beyond the word size. In many systems the shift amount will be applied $mod$ the word size so an attempt to shift by $32$ with result in a $32 \mod 32 = 0$ shift.
+
+\item
+\hr
 \begin{lstlisting}[language=C]
 int int_size_is_32() {
-	int i = 1 << 31;
-	int j = ~i;
-	return i > j;
+	int set_msb = 1 << 31;
+	int beyond_msb = 2 << 31;
+	return set_msb && !beyond_msb;
 }
 \end{lstlisting}
-\noindent\rule{12cm}{0.4pt}
+\hr
 
 
-C. \\
-\noindent\rule{12cm}{0.4pt}
+\item
+\hr
 \begin{lstlisting}[language=C]
-int int_size_is_32() {}
+int int_size_is_32() {
+	int i = 1 << 15;
+	i = i << 15; // 0 if less than 32 bit
+	int j = 4  << 15;
+	j = j << 15;
+	return i && !j;
+}
 \end{lstlisting}
-\noindent\rule{12cm}{0.4pt}
+\hr
+\end{enumerate}
+
+
+
 
 \vspace{0.5in}
-{\bf 2.71}
+{\bf 2.}
 
-A. SAY WHY THIS DOESN'T WORK.
+\begin{enumerate}[label=\alph*)]
 
-B. \\
-\noindent\rule{12cm}{0.4pt}
+
+\item 
+Doesn't perform sign extension.
+
+\item
+\hr
 \begin{lstlisting}[language=C]
 int xbyte(packed_t word, int bytenum) {
-	word = word << ((3 - bytenum) << 3);
-	most_sig = (1 << 31) & word; // tells us what will be filled on the next right shift
+	word = word >> (bytenum << 3);
+	word = word << 24;
 	word = word >> 24;
-	return word - ((most_sig << 31) >> 24);
+	return word;
 }
 \end{lstlisting}
-\noindent\rule{12cm}{0.4pt}
+\hr
+\end{enumerate}
 
 \vspace{0.5in}
-{\bf 2.76}
+{\bf 3.}
+\begin{enumerate}[label=\alph*)]
+\item
+The conditional test always succeeds because $sizeof()$ returns type $size\_t$ which is an unsigned data type. So the subtraction will result in an unsigned number which will always be less than or equal to $0$.
+\item
+\hr
+\begin{lstlisting}[language=C]
+void copy_int(int val, void *buf, int maxbytes) {
+	if (maxbytes >= (int)sizeof(val))
+		memcpy(buf, (void *) &val, sizeof(val));
+}
+\end{lstlisting}
+\hr
 
-A. $(x << 4) + x$ \\
-B. $x - (x << 3)$ \\
-C. $(x << 6) - (x << 2)$ \\
-D. $(x << 4) - (x << 7)$
+
+\end{enumerate}
+
+
+{\bf 4.}
+
+\begin{enumerate}[label=\alph*)]
+\item $(x << 4) + x$
+\item $x - (x << 3)$
+\item $(x << 6) - (x << 2)$
+\item $(x << 4) - (x << 7)$
+\end{enumerate}
+
+
+\vspace{0.5in}
+{\bf 5.}
+
+\begin{enumerate}[label=\alph*)]
+
+
+\item
+$ \sim 0 << k$
+
+\item
+\begin{lstlisting}[language=C]
+int create_val(int i, int j) {
+	r = 0;
+	for (int i = j + 1; i =< j + k; i++) {
+		r += 1 << i;
+	}
+	return i;
+}
+\end{lstlisting}
+\end{enumerate}
 
 \pagebreak
-{\bf 2.80}
-
-A. $ \sim 0 << k$
-
-B. 
-
 \vspace{0.5in}
-{\bf 2.81}
+{\bf 6.}
+\begin{enumerate}[label=\alph*)]
+\item
+$(x < y) == (-x > -y)$: \\
+When $x = TMin_w$ the first condition will evaluate to true and the second will be false. So this will return $0$.
+
+\item
+$((x+y)<<4) + y-x == 17*y+15*x$: \\
+We know that a bit shift is equivalent to multiplication by powers of $2$ and since multiplication is distributive $((x+y)<<4) == (x << 4) + (y << 4)$. So we can replace the left side of the equality with $(y << 4) + y + (x << 4) - x$.  On the right side we can rewrite the multiplications as sums of powers of $2$. So $17*y$ becomes $)y << 4) + y$ and $15*x$ becomes $x << 4 - x$. We now see that the left side if equivalent to the right side.
+
+\item
+$\sim x+ \sim y+1 == \sim (x+y)$: \\
+When $x = y = \sim 0$ (all bits set to $1$), the left side of the expression $\sim x+ \sim y+1$ evaluates to $1$ but the left side of the equation $\sim (x + y)$ evaluates to $\sim 0$ (all bits set to $1$).
+
+\item
+$(ux-uy) == -(unsigned)(y-x)$:
+
+
+\item
+$((x >> 2) << 2) <= x$: \\
+In any case (where the most significant bit of $x$ is $0$ or $1$) when we shift left and then right we will fill in $0$'s on the left side and any added bits will overflow on the right side. So this expression is always true.
+
+\end{enumerate}
+
+{\bf 7.}
+
+
+{\bf 8.}
+
+{\bf 9.}
+
+{\bf 10.}
+
 \end{document}
