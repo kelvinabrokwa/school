@@ -1,0 +1,80 @@
+\documentclass[11pt]{article} % 
+
+\usepackage{listings}
+\usepackage{amsmath}
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+
+\begin{document} 
+%\maketitle
+
+\noindent Kelvin Abrokwa-Johnson \\
+14 March 2016 \\
+CS 304
+
+\begin{center} Homework 1 \end{center}
+
+
+{\bf 2.67}
+
+A. The code fails to comply with the C standard because it attempts to shift beyond the word size. In many systems the shift amount will be applied $mod$ the word size so an attempt to shift by $32$ with result in a $32 \mod 32 = 0$ shift.
+
+B. \\
+\noindent\rule{12cm}{0.4pt}
+\begin{lstlisting}[language=C]
+int int_size_is_32() {
+	int i = 1 << 31;
+	int j = ~i;
+	return i > j;
+}
+\end{lstlisting}
+\noindent\rule{12cm}{0.4pt}
+
+
+C. \\
+\noindent\rule{12cm}{0.4pt}
+\begin{lstlisting}[language=C]
+int int_size_is_32() {}
+\end{lstlisting}
+\noindent\rule{12cm}{0.4pt}
+
+\vspace{0.5in}
+{\bf 2.71}
+
+A. SAY WHY THIS DOESN'T WORK.
+
+B. \\
+\noindent\rule{12cm}{0.4pt}
+\begin{lstlisting}[language=C]
+int xbyte(packed_t word, int bytenum) {
+	word = word << ((3 - bytenum) << 3);
+	most_sig = (1 << 31) & word; // tells us what will be filled on the next right shift
+	word = word >> 24;
+	return word - ((most_sig << 31) >> 24);
+}
+\end{lstlisting}
+\noindent\rule{12cm}{0.4pt}
+
+\vspace{0.5in}
+{\bf 2.76}
+
+A. $(x << 4) + x$ \\
+B. $x - (x << 3)$ \\
+C. $(x << 6) - (x << 2)$ \\
+D. $(x << 4) - (x << 7)$
+
+\pagebreak
+{\bf 2.80}
+
+A. $ \sim 0 << k$
+
+B. 
+
+\vspace{0.5in}
+{\bf 2.81}
+\end{document}

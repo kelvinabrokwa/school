@@ -1,0 +1,153 @@
+\documentclass[11pt]{article} % 
+
+\setlength{\oddsidemargin}{-0.15in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength\parindent{0pt}
+
+\newcommand{\cP}{{\cal P}}
+\newcommand{\IN}{{\bf N}}
+\newcommand{\IZ}{{\bf Z}}
+\newcommand{\IR}{{\bf R}}
+\newcommand{\IQ}{{\bf Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\qed}{{\hfill {\rm QED}}}
+
+\begin{document} 
+%\maketitle
+
+Kelvin Abrokwa-Johnson \\
+30 January 2016 \\
+Math 309
+
+\begin{center} Homework 1 \end{center}
+
+{\bf 7.} Less $S = {0, 1}$ and $F = R$. In $\mathcal{F}(S, R$, show that $f=g$ and $f + g = h$, where $f(t) = 2t + 1, g(t) = 1 + 4t + 2t^2$, and $h(t) = 5^t + 1$.
+
+\medskip
+{\bf Solution:}
+
+For $0$:
+
+$$f{0} = 2(0) + 1 = g(0) = 1 + 4(0) - 2(0)^2 = 1$$
+$$h(0) = 5^0 + 1 = f(0) + g(0) = 1 + 1 = 2$$
+
+For $1$:
+
+$$f(1) = 2(1) + 1 = g(1) = 1 + 4(1) - 2(1)^2 = 3$$
+$$h(1) = 5^1 + 1 = f(1) + g(1) = 3 + 3 = 6$$
+
+Thus, we have shown what was to be shown.
+
+
+\vskip .5in
+{\bf 8.} In any vector space $V$, show that $(a + b)(x + y) =  ax + ay + bx + by$ for any $x,y \in V$ and any $a,b \in F$.
+
+\medskip
+{\bf Solution:}
+
+By (VS 8) we know that we can distribute the vectors in a vector-scalar multiplication, so $(a + b)(x + y) = a(x + y) + b(x + y)$. By (VS 7) we know that we can distribute the scalar in a vector-scalar multiplacation, so $a(x + y) + b(x + y) = ax + ay + bx + by$. And so we have shown that $(a + b)(x + y) =  ax + ay + bx + by$.
+
+
+\vskip .5in
+{\bf 12.} A real-valued function f defined on the real line is called an even function if $f(-t) = f(t)$ for each real number $t$. Prove that the set of even functions defined on the real line with the operations of addition and scalar multiplication defined in Example 3 is a vector space.
+
+\medskip
+{\bf Solution:}
+\begin{itemize}
+
+
+\item Suppose $E$ is the set of even functions. Take the function $f \in E$, . Since $f(-t) = f(t)$, we know that $af(-t) = af(t)$ for all $a \in {\bf R}$, so $(af)(t) \in E$, i.e. closed under scalar multiplication.
+
+\item Take $f,g \in E$. $(f + g)(t) = f(t) + g(t) = f(-t) + g(-t) = (f + g)(-t)$. In short $(f + g)(t) = (f + g)(-t)$ so $(f + g)(t) \in E$, i.e. closed under addition.
+
+\item Since $f(t) = f(-t)$ for $f \in E$ where $f(t) = 0$, $f(t) = 0 \in E$, i.e. has a $0$ function.
+
+\end{itemize}
+
+\pagebreak
+
+{\bf 18.} Let $V = \{ (a_1, a_2): a_1, a_2 \in {\bf R} \}$. For $(a_1, a_2), (b_1, b_2) \in V$ adn $c \in {\bf R}$, define
+
+\begin{center}
+$(a_1, a_2) + (b_1, b_2)  = (a_1 + 2b_1, a_2 + 3b_2)$
+and 
+$c(a_1, a_2) = (ca_1, ca_2)$
+\end{center}
+
+Is $V$ a vector space over ${\bf R}$ wit these operations?
+
+\medskip
+{\bf Solution:}
+
+No, $V$ is not a vector space over ${\bf R}$.
+
+Take $a_1, a_2 \neq 0 \in {\bf R}$. Since $(a_1, a_2) + (0, 0) = (a_1, a_2)$ and $(0, 0) + (a_1, a_2) = (2a_1, 3a_2)$, i.e. $(a_1, a_2) + 0 \neq 0 + (a_1, a_2)$. The set does not have commutative addition so it is not a vector space.
+
+
+\vskip .5in
+{\bf 21.} Let $V$ adn $W$ be vector spaces over a field $F$. Let
+
+$$Z = \{ (v,w): v \in V, w \in W \}$$
+
+Prove that $Z$ is a vector space over $F$ with operations:
+
+\begin{center}
+$(v_1, w_1) + (v_2, w_2) = (v_1 + v_1, w_1 + w_2)$ and $c(v_1, w_1) = (cv_1, cw_1)$
+\end{center}
+
+\medskip
+{\bf Solution:}
+
+\begin{itemize}
+
+\item Take $v_1, v_2 \in V$, $w_1, w_2 \in W$. Since $V$ and $W$ are vector spaces, $v_1 + v_2 \in V$ and $w_1 + w_2 \in W$, so it follows that $(v_1, w_1) + (v_2, w_2) \in Z$, i.e. closed under addition.
+
+\item Take $v \in V, w \in W, c \in F$. Since $V$ and $W$ are vector spaces, $cv \in V$ and $cw \in W$. So, $c(v, w) = (cv, cw) \in Z$, i.e. closed under scalar multiplication.
+
+\item Since $V$ and $W$ are vector spaces, $\vec{0} \in V, W$. So $(\vec{0}_V, \vec{0}_W) \in Z$, i.e. $Z$ has a $0$ vector.
+
+\end{itemize}
+
+
+
+\vskip .5in
+{\bf 19.} Let $W_1$ and $W_2$ be subspaces of a vector space $V$. Prove that $W_1 \cup W_2$ is a subspace of $V$ if and only if $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.
+
+\medskip
+{\bf Solution:}
+
+\begin{itemize}
+
+\item Proof (1): $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$ implies $W_1 \cup W_2$ is a subspace.
+
+Assume, without loss of generality, that $W_1 \subseteq W_2$. Then, $W_1 \cup W_2 = W_2$ which we know is a subspace (the same logic applies when $W_2 \subseteq W_1$).
+
+\item Proof (2): $W_1 \cup W_2$ is a subspace implies $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.
+
+We will use prooof by contradiction. Assume $W_1 \cup W_2$ is a subspace and $W_1 \not\subset W_2$ and $W_2 \not\subset W_1$. Take $w_1 \in W_1, \not\in W_2, w_2 \in W_2, \not\in W_1$. We know what $w_1+ w_2 \in W_1 \cup W_2$, which means $w_1+ w_2 \in W_1$ or $w_1+ w_2 \in W_1$. We assume, without loss of generality, that $w_1+ w_2 \in W_1$. Now, we add the additive inverse of $w_1$, $-w_1 \in W_1$ to $w_1 + w_2$ to get $(w_1 + w_2) + (-w_1) = w_2 \in W_1$ which contradicts our initial condition that $w_2 \not\in W_1$
+
+\end{itemize}
+
+
+\vskip .5in
+{\bf 20.} Prove that if $W$ is a subspace of a vector space $V$ and $w_1,w_2,...,w_n$ are in $W$, then $a_1w_1 + a_2w_2 + \cdot \cdot \cdot + a_nw_n \in W$ for any scalar $a_1,a_2,...,a_n$.
+
+\medskip
+{\bf Solution:}
+
+Proof by induction:
+
+\begin{itemize}
+
+\item \underline{Base case:} From their definition we know that vector spaces are closed under scalar multplication and addition. So it follows that $a_1w_1 + a_2w_2 \in W$.
+
+\item \underline{Assume:} $a_1w_1 + \cdot\cdot\cdot + a_{n-1}w_{n-1} \in W$.
+
+\item \underline{Need to show:} $(a_1w_1 + \cdot\cdot\cdot + a_{n-1}w_{n-1}) + a_nw_n \in W$
+
+\item \underline{Proof:} We assumed $a_1w_1 + \cdot\cdot\cdot + a_{n-1}w_{n-1} \in W$. Since $a_nw_n \in W$ ($W$ is closed under scalar multiplication) and since we also know that $W$ is closed under addition, it follows that $(a_1w_1 + \cdot\cdot\cdot + a_{n-1}w_{n-1}) + a_nw_n \in W$. {\bf PMI}.
+
+\end{itemize}
+\end{document}
