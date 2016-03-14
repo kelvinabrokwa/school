@@ -13,6 +13,8 @@
 \newcommand{\IQ}{{\bf Q}}
 \newcommand{\points}[1]{{\it (#1 Points)}}
 \newcommand{\qed}{{\hfill {\rm QED}}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
 
 \begin{document} 
 
@@ -43,10 +45,10 @@ A matrix $A$ is {\bf symmertric positive definite} if it is symmetric and if $x^
 If $A$ is an $n \times n$ SPD matrix, then
 
 \begin{itemize}
-\item $A$ has an inverse
-\item $a_{ii} > 0$ for each $i = 1, 2, ..., n$
-\item $max_{1 \leq k, j \leq n} |a_{kj}| \leq max_{1 \leq i \leq n} |a_{ii}|$
-\item $(a_{ij})^2 < a_{ii}a_{jj}$, for each $i \leq j$
+	\item $A$ has an inverse
+	\item $a_{ii} > 0$ for each $i = 1, 2, ..., n$
+	\item $max_{1 \leq k, j \leq n} |a_{kj}| \leq max_{1 \leq i \leq n} |a_{ii}|$
+	\item $(a_{ij})^2 < a_{ii}a_{jj}$, for each $i \leq j$
 \end{itemize}
 
 The matrix $A$ is positive definite if and only if $A$ can be factored in the form $LDL^t$, where $L$ is lower triangular with $1$s on its diagonal and $D$ is a diagonal matrix with positive diagonal entries.
@@ -69,10 +71,10 @@ $O(n)$ time multiplication
 A vector norm on $R^n$ is a function, $|| \cdot ||$, from $R^n$ into $R$ with the following properties:
 
 \begin{itemize}
-\item $||x|| \geq 0$ for all $x \in R^n$
-\item $||x|| = 0$ if and only if $x = 0$
-\item $||\alpha x|| = |\alpha| ||x||$ for all $\alpha \in R$, $x \in R^n$
-\item $||x + y|| \leq ||x|| + ||y||$ for all $x, y \in R^n$
+	\item $||x|| \geq 0$ for all $x \in R^n$
+	\item $||x|| = 0$ if and only if $x = 0$
+	\item $||\alpha x|| = |\alpha| ||x||$ for all $\alpha \in R$, $x \in R^n$
+	\item $||x + y|| \leq ||x|| + ||y||$ for all $x, y \in R^n$
 \end{itemize}
 
 The $l_2$ norm is defined as such:
@@ -103,11 +105,11 @@ The sequence of vectors $\{x^{(k)}\}$ converges to $x$ in $R^n$ with respect to 
 A matrix norm on the set of all $n \times n$ matrices is a real-valued function, $|| \cdot ||$, defined on this set, satisfying for all $n \times n$ matrices $A$ and $B$ and all real numbers $\alpha$:
 
 \begin{itemize}
-\item $||A|| \geq 0$
-\item $||A|| = 0$ if and only if $A$ is $0$, the matrix with all $0$ entries
-\item $|| \alpha A || = |\alpha| ||A||$
-\item $|| A + B || \leq ||A|| + ||B||$
-\item $||AB|| \leq ||A|| ||B||$
+	\item $||A|| \geq 0$
+	\item $||A|| = 0$ if and only if $A$ is $0$, the matrix with all $0$ entries
+	\item $|| \alpha A || = |\alpha| ||A||$
+	\item $|| A + B || \leq ||A|| + ||B||$
+	\item $||AB|| \leq ||A|| ||B||$
 \end{itemize}
 
 The distance between $n \times n$ matrices $A$ and $B$ with respect to this matrix norm is $||A − B||$.
@@ -126,11 +128,7 @@ $$||Az|| \leq ||A|| \cdot ||z||$$
 
 \medskip
 If $A = (aij)$ is an $n \times n$ matrix, then
-
-$$
-||A||_{\infty} = max_{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}|
-$$
-
+$$||A||_{\infty} = max_{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}|$$
 (max row sum).
 
 
@@ -142,7 +140,7 @@ $$
 The spectral radius $\rho(A)$ of a matrix $A$ is defined by
 
 \begin{center}
-$\rho(A) = max |\lambda|$, where $\lambda$ is an eigenvalue of $A$
+	$\rho(A) = max |\lambda|$, where $\lambda$ is an eigenvalue of $A$
 \end{center}
 
 
@@ -150,19 +148,17 @@ $\rho(A) = max |\lambda|$, where $\lambda$ is an eigenvalue of $A$
 {\bf Jacobi Method}
 
 The Jacobi method can be written in the form $x^{(k)} = T x^{(k-1)} + c$ by splitting $A$ into its diagonal and off-diagonal parts.
-
 $$A = D - L - U$$
-
 So we have,
 
 \begin{center}
-$x^{(k)} = D^{-1}(L + U)x^{(k-1)}+D^{-1}b$, $k=1,2,....$
+	$x^{(k)} = D^{-1}(L + U)x^{(k-1)}+D^{-1}b$, $k=1,2,....$
 \end{center}
 
 To shorten,
 
 \begin{center}
-$T_j = D^{-1}(L + U)$ and $c_j = D^{-1}b$
+	$T_j = D^{-1}(L + U)$ and $c_j = D^{-1}b$
 \end{center}
 
 So we have 
@@ -183,13 +179,11 @@ $$x^{(k)} =(D-L)^{-1}Ux^{(k-1)}+(D-L)^{-1}b$$
 Letting
 
 \begin{center}
-$T_g = (D-L)^{-1}U$ and $c_g = (D-L)^{-1}b$
+	$T_g = (D-L)^{-1}U$ and $c_g = (D-L)^{-1}b$
 \end{center}
 
 We get
-
 $$x^{(k)} = T_gx_{(k-1)} + c_g$$
-
 Note: for $D - L$ to be nonsingular, it is necessary and sufficient that $a_{ii} \neq 0$.
 
 
@@ -197,5 +191,10 @@ Note: for $D - L$ to be nonsingular, it is necessary and sufficient that $a_{ii}
 {\bf Conjugate Gradient Method}
 
 Matrix must be positive definite.
+
+input $A$, $b$, $x_0$ \\
+$r_0 = b - Ax_0$ \\
+DO $k = 1...n$ \\
+\tab $\alpha_{k} = \frac { r^{t}_{k-1} r_{k-1}} {P^{t}_{k} A P^{t}}$
 
 \end{document}
