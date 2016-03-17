@@ -85,7 +85,8 @@ The conditional test always succeeds because $sizeof()$ returns type $size\_t$ w
 \hr
 \begin{lstlisting}[language=C]
 void copy_int(int val, void *buf, int maxbytes) {
-	if (maxbytes >= (int)sizeof(val))
+	// assumes sizeof(size_t) <= sizeof(int)
+	if (maxbytes >= (int)sizeof(val)) 
 		memcpy(buf, (void *) &val, sizeof(val));
 }
 \end{lstlisting}
@@ -141,7 +142,8 @@ $\sim x+ \sim y+1 == \sim (x+y)$: \\
 When $x = y = \sim 0$ (all bits set to $1$), the left side of the expression $\sim x+ \sim y+1$ evaluates to $1$ but the left side of the equation $\sim (x + y)$ evaluates to $\sim 0$ (all bits set to $1$).
 
 \item
-$(ux-uy) == -(unsigned)(y-x)$:
+$(ux - uy) == -(unsigned)(y - x)$: \\
+This is true because the casting does not affect th order of the bits just how the numbers are treated
 
 
 \item
@@ -172,12 +174,14 @@ In any case (where the most significant bit of $x$ is $0$ or $1$) when we shift 
 \item $(float) x == (float) dx$: \\
 True because the casting does not affect the bits or get rid of them in this case
 
-\item $dx - dy == (double) (x-y)$: \\
+\item $dx - dy == (double) (x - y)$: \\
+False when $y = 0$
 
 \item $(dx + dy) + dz == dx + (dy + dz)$: \\
 True because Abelian groups have associative addition in general
 
 \item $(dx * dy) * dz == dx * (dy * dz)$: \\
+False when $x = y = z = INT\_MAX$
 
 \item $dx / dx == dz / dz$: \\
 This does not work in the case of $0$ division
@@ -196,14 +200,14 @@ float fpwr2(int x)
 		/* Too small. Return 0.0 */
 		exp = 0;
 		frac = 0;
-	} else if (x < _________){
+	} else if (x < 0){
 		/* Denormalized result */
-		exp = _________;
-		frac = _________;
-	} else if (x < _________){
+		exp = 0;
+		frac = 1 << x;
+	} else if (x < 23){
 		/* Normalized result. */
-		exp = _________;
-		frac = _________;
+		exp = 1 < x;
+		frac = 0;
 	} else {
 		/* Too big. Return +oo */
 		exp = 0xFF;
