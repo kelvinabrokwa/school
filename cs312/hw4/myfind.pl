@@ -1,10 +1,20 @@
 #!/usr/local/bin/perl
 
 # Kelvin Abrokwa-Johnson
-# Homework 4
-# myfind.pl
-# This program implements *nix `find` with options ls grep name pwd.
-# ls cannot be combined with grep or pwd
+# Professor Davis
+# CSCI 312
+# Homework 4 myfind.pl
+#
+# This is perl program that mimics some of the features of the find command in Linux/Unix.
+# When run from the command line, the find command prints all of the
+# file names in the provided directory, then recursively visits all
+# subdirectories to print their files as well. Many options exist
+# for find, but it will implement only a few simple ones:
+#  -name
+#  -ls
+#  -pwd
+#  -grep
+# Enjoy -___-
 
 use Cwd;
 use strict;
