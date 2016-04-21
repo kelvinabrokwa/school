@@ -1,7 +1,7 @@
 /*
  * CS:APP Data Lab
  *
- * <Please put your name and userid here>
+ * Kelvin Abrokwa-Johnson - 930832690
  *
  * bits.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
@@ -171,7 +171,7 @@ NOTES:
  *   Rating: 1
  */
 int bitNor(int x, int y) {
-  return ~x & ~y;
+  return ~x & ~y; // de Morgan's
 }
 /*
  * getByte - Extract byte n from word x
@@ -182,7 +182,7 @@ int bitNor(int x, int y) {
  *   Rating: 2
  */
 int getByte(int x, int n) {
-  return (x >> (n<<3)) & 0xFF;
+  return (x >> (n << 3)) & 0xFF; // shft desired over and mask
 }
 /*
  * logicalShift - shift x to the right by n, using a logical shift
@@ -193,7 +193,9 @@ int getByte(int x, int n) {
  *   Rating: 3
  */
 int logicalShift(int x, int n) {
-  return (x >> n) & ~((1 << 31) >> n); // assumes arithmetic right shift !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // shift and clear 0s
+    int mask = ((1 << 31) >> n) << 1;
+    return (x >> n) & ~mask;
 }
 /*
  * conditional - same as x ? y : z
@@ -224,7 +226,7 @@ int bang(int x) {
  *   Rating: 1
  */
 int tmin(void) {
-  return 2;
+  return 1 << 31;
 }
 /*
  * negate - return -x
@@ -234,7 +236,7 @@ int tmin(void) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  return ~x + 1;
 }
 /*
  * fitsBits - return 1 if x can be represented as an
@@ -246,7 +248,8 @@ int negate(int x) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-  return 2;
+    int mask = x >> 31;
+    return !(((~x & mask) + (x & ~mask)) >> (n + ~0));
 }
 /*
  * divpwr2 - Compute x/(2^n), for 0 <= n <= 30
@@ -257,7 +260,9 @@ int fitsBits(int x, int n) {
  *   Rating: 2
  */
 int divpwr2(int x, int n) {
-    return 2;
+    int mask = (1 << n) + ~0;
+    int equalizer = (x >> 31) & mask;
+    return (x + equalizer) >> n;
 }
 /*
  * isNegative - return 1 if x < 0, return 0 otherwise
@@ -267,7 +272,7 @@ int divpwr2(int x, int n) {
  *   Rating: 2
  */
 int isNegative(int x) {
-  return 2;
+  return !!(x >> 31);
 }
 /*
  * isNonZero - Check whether x is nonzero using
@@ -278,7 +283,7 @@ int isNegative(int x) {
  *   Rating: 4
  */
 int isNonZero(int x) {
-  return 2;
+  return ((x | (~x + 1)) >> 31) & 1;
 }
 /*
  * float_neg - Return bit-level equivalent of expression -f for
@@ -292,7 +297,13 @@ int isNonZero(int x) {
  *   Rating: 2
  */
 unsigned float_neg(unsigned uf) {
- return 2;
+    unsigned mask = 0x80000000;
+    unsigned NaN = 0x7FC00000;
+    unsigned inf = 0xFFC00000;
+    if (uf == NaN || uf == inf) {
+        return uf;
+    }
+    return uf ^ mask;
 }
 /*
  * float_f2i - Return bit-level equivalent of expression (int) f
@@ -307,7 +318,18 @@ unsigned float_neg(unsigned uf) {
  *   Rating: 4
  */
 int float_f2i(unsigned uf) {
-  return 2;
+    int exp = (uf >> 23) & 0xFF;
+    int frac = uf & 0x7FFFFF;
+    int e = exp - 127;
+    if (exp == 0x7F800000) return 0x80000000u;
+    if (!exp) return 0;
+    if (e < 0) return 0;
+    if (e > 30) return 0x80000000u;
+    frac = frac | 0x800000;
+    if (e >= 23) frac = frac << (e-23);
+    else frac = frac >> (23 -e);
+    if (( uf >> 31 ) & 1) return ~frac + 1;
+    return frac;
 }
 /*
  * float_twice - Return bit-level equivalent of expression 2*f for
@@ -321,5 +343,17 @@ int float_f2i(unsigned uf) {
  *   Rating: 4
  */
 unsigned float_twice(unsigned uf) {
-  return 2;
+    unsigned exp = (uf >> 23) & 0xFF;
+    unsigned sign = uf & 0x80000000;
+    unsigned fr = uf & 0x007FFFFF;
+    if ((exp == 0 && fr == 0) || exp == 255) return uf;
+    if (exp) {
+        exp++;
+    } else if (fr == 0x7FFFFF) {
+        fr--;
+        exp++;
+    } else {
+        fr <<= 1;
+    }
+    return (sign) | (exp << 23) | (fr);
 }
